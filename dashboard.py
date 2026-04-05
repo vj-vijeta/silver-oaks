@@ -8,16 +8,17 @@ from datetime import datetime
 # --- PAGE CONFIGURATION ---
 st.set_page_config(
     page_title="Silver Oaks Schools - Impact Dashboard",
-    page_icon="🌳",
+    page_icon="https://ei.study/wp-content/uploads/2022/10/edilogo.png",
     layout="wide"
 )
 
 # --- THEME & STYLING ---
-COLOR_PRIMARY = "#1E3A8A"  # Deep Blue
-COLOR_SECONDARY = "#10B981"  # Emerald Green
+COLOR_PRIMARY = "#A01E21"  # Primary Red
+COLOR_SECONDARY = "#58595B"  # Dark Gray
+COLOR_LIGHT_SECONDARY = "#BCBEC0"  # Light Gray
 COLOR_TEXT = "#1F2937"
 COLOR_BG = "#F9FAFB"
-
+st.header(":red[Ei]",divider="gray")
 st.markdown(f"""
     <style>
     .main {{
@@ -38,12 +39,12 @@ st.markdown(f"""
     }}
     .metric-label {{
         font-size: 1rem;
-        color: #6B7280;
+        color: {COLOR_SECONDARY};
         font-weight: 500;
         margin-top: 8px;
     }}
     .impact-pointer {{
-        background-color: #EFF6FF;
+        background-color: {COLOR_LIGHT_SECONDARY};
         border-left: 4px solid {COLOR_PRIMARY};
         padding: 16px;
         margin: 12px 0;
@@ -55,7 +56,7 @@ st.markdown(f"""
     .stTabs [data-baseweb="tab"] {{
         height: 50px;
         white-space: pre-wrap;
-        background-color: #F3F4F6;
+        background-color: {COLOR_LIGHT_SECONDARY};
         border-radius: 8px 8px 0 0;
         padding: 10px 20px;
         font-weight: 600;
@@ -149,20 +150,23 @@ def load_school_data(school_id):
 
 # --- SIDEBAR ---
 with st.sidebar:
-    st.image("https://www.silveroaks.co.in/wp-content/uploads/2021/06/Silver-Oaks-Logo.png", width=200)
+    st.image("https://ei.study/wp-content/uploads/2022/10/edilogo.png")
     st.title("School Selector")
     selected_school_name = st.selectbox("Select School", list(SCHOOLS.keys()))
     school_id = SCHOOLS[selected_school_name]
     
 school_data = load_school_data(school_id)
 
+# --- HEADER ---
+# st.markdown(f'<span style="color: {COLOR_PRIMARY}; font-size: 2rem; font-weight: bold;">Ei</span>', unsafe_allow_html=True)
+
 # --- DEFINE TABS DYNAMICALLY ---
-tabs_list = ["🏠 Home"]
-if school_data["Asset"]: tabs_list.append("📊 Asset")
-if school_id in SCHOOL_REPORTS: tabs_list.append("📈 Strategic Summary")
-if school_data["Mindspark Math"]: tabs_list.append("🧮 Mindspark Math")
-if school_data["Mindspark English"]: tabs_list.append("📚 Mindspark English")
-if school_data["Mindspark Science"]: tabs_list.append("🔬 Mindspark Science")
+tabs_list = ["Home"]
+if school_data["Asset"]: tabs_list.append("Asset")
+if school_id in SCHOOL_REPORTS: tabs_list.append("Strategic Summary")
+if school_data["Mindspark Math"]: tabs_list.append("Mindspark Math")
+if school_data["Mindspark English"]: tabs_list.append("Mindspark English")
+if school_data["Mindspark Science"]: tabs_list.append("Mindspark Science")
 
 selected_tabs = st.tabs(tabs_list)
 # Create a map for robust indexing: e.g., {"Asset": 1, "Mindspark Math": 2, ...}
@@ -205,7 +209,7 @@ def clean_benchmarking_df(df):
 
 # --- HOME TAB ---
 with selected_tabs[0]:
-    st.header(f"🌳 {selected_school_name} - Institutional Impact")
+    st.header(f"{selected_school_name} - Institutional Impact")
     
     # Calculate Global Metrics
     tot_q = 0
@@ -299,7 +303,7 @@ with selected_tabs[0]:
         """)
         
         st.write("---")
-        st.subheader("📈 Institutional Engagement Trends")
+        st.subheader("Institutional Engagement Trends")
         # Global Usage ROI (from 'View Underlying Data')
         usage_dfs = []
         for prod in ["Mindspark Math", "Mindspark English", "Mindspark Science"]:
@@ -336,7 +340,7 @@ with selected_tabs[0]:
     st.write("---")
     
     # Academic Rigor & Persistence - High Impact
-    st.subheader("🔥 Academic Rigor & Impact")
+    st.subheader("Academic Rigor & Impact")
     stu_details_home = get_file("Mindspark Math", "Student") # Matches 'Student details' and 'Student data'
     if stu_details_home is not None:
         c1_home, c2_home = st.columns([1, 2])
@@ -381,7 +385,7 @@ if "Asset" in tab_map:
                 st.plotly_chart(fig, width="stretch")
             with grid_c2:
                 st.markdown("### Strategic Advantage")
-                st.info("💡 **Benchmark Outperformance**: Silver Oaks students are consistently performing in the top decile compared to national cohorts.")
+                st.info("**Benchmark Outperformance**: Silver Oaks students are consistently performing in the top decile compared to national cohorts.")
                 st.markdown("""
                 **Value Narrative:** This section proves that your institution is not just meeting, 
                 but setting global education standards.
@@ -389,8 +393,7 @@ if "Asset" in tab_map:
 
         # All Subjects Skill Mastery & YoY Skill Progress
         st.write("---")
-        st.subheader("📚 Longitudinal Skill Excellence")
-        st.subheader("📚 Longitudinal Skill Excellence")
+        st.subheader("Longitudinal Skill Excellence")
         
         # Collect all class options across all skill files for a master dropdown
         all_s_classes = set()
@@ -405,7 +408,7 @@ if "Asset" in tab_map:
             
             for subject in ["Math", "English", "Science"]:
                 st.write(f"---")
-                st.subheader(f"📖 {subject} Impact Profile")
+                st.subheader(f"{subject} Impact Profile")
                 
                 col_skill_1, col_skill_2 = st.columns(2)
                 
@@ -500,17 +503,17 @@ if "Mindspark Math" in tab_map:
             if m_rem is not None: 
                 # Add remediation success note if possible
                 st.dataframe(m_rem, width="stretch")
-                st.info("✅ Automated remediation closed critical learning gaps for 100% of struggling students.")
+                st.info("Automated remediation closed critical learning gaps for 100% of struggling students.")
         with c2:
             st.markdown("### Excellence Portfolio")
             m_high = get_file("Mindspark Math", "Higher Level")
             if m_high is not None: 
                 st.dataframe(m_high, width="stretch")
-                st.success("🌟 Gifted learners were continuously challenged with higher-order thinking content.")
+                st.success("Gifted learners were continuously challenged with higher-order thinking content.")
         
         # --- ACADEMIC RIGOR SECTION (FROM STUDENT DATA) ---
         st.write("---")
-        st.subheader("🎯 Academic Rigor & Impact Distribution")
+        st.subheader("Academic Rigor & Impact Distribution")
         m_student = get_file("Mindspark Math", "Student")
         if m_student is not None:
             try:
@@ -527,11 +530,11 @@ if "Mindspark Math" in tab_map:
 # --- STRATEGIC SUMMARY TAB ---
 if "Summary" in tab_map:
     with selected_tabs[tab_map["Summary"]]:
-        st.header("📈 Strategic Executive Summary")
+        st.header("Strategic Executive Summary")
         report = SCHOOL_REPORTS.get(school_id, {})
         
         # 1. Celebrating Achievements
-        st.subheader("🌟 Celebrating Excellence: Sparkie Stars & Question Champs")
+        st.subheader("Celebrating Excellence: Sparkie Stars & Question Champs")
         if "top_performers" in report:
             tp_df = pd.DataFrame(report["top_performers"])
             st.table(tp_df)
@@ -541,14 +544,14 @@ if "Summary" in tab_map:
         # 2. Usage & AI insights
         col_ai1, col_ai2 = st.columns(2)
         with col_ai1:
-            st.markdown("### 🤖 Usage Insights")
+            st.markdown("### Usage Insights")
             st.info(f"""
             - **Engagement**: Active students average {report.get('weekly_usage', 0)} minutes of weekly usage.
             - **Growth**: High volume of questions ({int(report.get('tot_q', 0)):,}+) and {report.get('accuracy', 0)}% accuracy demonstrate effectiveness.
             - **Context**: A total of {report.get('reg_students', 0)} registered students have participated this year.
             """)
         with col_ai2:
-            st.markdown("### 🎯 Accuracy & Mastery")
+            st.markdown("### Accuracy & Mastery")
             st.success(f"""
             - **Math Proficiency**: Overall accuracy stands at {report.get('accuracy', 0)}%.
             - **Remediation**: {int(report.get('remediation', 0)):,} instances of automated learning gap closures.
@@ -558,23 +561,23 @@ if "Summary" in tab_map:
         st.write("---")
         
         # 3. Best Practices
-        st.subheader("💡 Strategic Implementation Best Practices")
+        st.subheader("Strategic Implementation Best Practices")
         bp1, bp2, bp3 = st.columns(3)
         with bp1:
             st.markdown("**Usage Guidelines**")
-            st.write("- 🎯 Goal: 60 mins/week per student.")
-            st.write("- 🏛️ Context: Ideal as a laboratory activity.")
-            st.write("- 📅 Schedule: 2 periods/subject per week.")
+            st.write("- Goal: 60 mins/week per student.")
+            st.write("- Context: Ideal as a laboratory activity.")
+            st.write("- Schedule: 2 periods/subject per week.")
         with bp2:
             st.markdown("**Implementation Strategy**")
-            st.write("- 🔍 Alignment: Sync with current teaching.")
-            st.write("- 📚 Topics: Maintain 3-4 active topics.")
-            st.write("- ✅ Progress: Aim for 80-90% before deactivating.")
+            st.write("- Alignment: Sync with current teaching.")
+            st.write("- Topics: Maintain 3-4 active topics.")
+            st.write("- Progress: Aim for 80-90% before deactivating.")
         with bp3:
             st.markdown("**Teacher Intervention**")
-            st.write("- 🛑 Intervene: On low accuracy first attempt.")
-            st.write("- 🗣️ Discuss: Common wrong answers/misconceptions.")
-            st.write("- 🏆 Reward: Recognize 'Sparkie Stars' publicly.")
+            st.write("- Intervene: On low accuracy first attempt.")
+            st.write("- Discuss: Common wrong answers/misconceptions.")
+            st.write("- Reward: Recognize 'Sparkie Stars' publicly.")
 
 # --- MINDSPARK ENGLISH TAB ---
 if "Mindspark English" in tab_map:
@@ -627,7 +630,7 @@ if "Mindspark English" in tab_map:
             except: pass
         
         st.write("---")
-        st.subheader("💡 Strategic Linguistic Value")
+        st.subheader("Strategic Linguistic Value")
         eng_c1, eng_c2 = st.columns(2)
         with eng_c1:
             st.markdown("""
@@ -685,16 +688,16 @@ if "Mindspark Science" in tab_map:
             s_rem = get_file("Mindspark Science", "Remedial Summary")
             if s_rem is not None: 
                 st.dataframe(s_rem, width="stretch")
-                st.info("✅ Science Remediation: Automated gap-filling ensures every student masters foundational inquiry before moving to complex topics.")
+                st.info("Science Remediation: Automated gap-filling ensures every student masters foundational inquiry before moving to complex topics.")
         with sc2:
             st.markdown("### Higher Level Challenges (Science)")
             s_high = get_file("Mindspark Science", "Higher Level")
             if s_high is not None: 
                 st.dataframe(s_high, width="stretch")
-                st.success("🌟 Scientific Excellence: Gifted learners are effectively tackling complex inquiry-based problems, building critical research foundations.")
+                st.success("Scientific Excellence: Gifted learners are effectively tackling complex inquiry-based problems, building critical research foundations.")
 
         st.write("---")
-        st.subheader("💡 Strategic Scientific Impact")
+        st.subheader("Strategic Scientific Impact")
         sci_note_1, sci_note_2 = st.columns(2)
         with sci_note_1:
             st.markdown("""
