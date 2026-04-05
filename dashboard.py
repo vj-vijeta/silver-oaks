@@ -80,6 +80,48 @@ st.markdown(f"""
     </style>
 """, unsafe_allow_html=True)
 
+# --- BRAND HEADER & FOOTER BANNER ---
+st.markdown(f"""
+    <style>
+        /* Top Brand Banner */
+        .ei-header-banner {{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 12px;
+            background-color: {COLOR_BRAND};
+            z-index: 999999;
+        }}
+        
+        /* Bottom Brand Footer */
+        .ei-footer-banner {{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: {COLOR_BRAND};
+            color: #FFFFFF;
+            text-align: center;
+            padding: 12px 0;
+            z-index: 999999;
+            font-family: sans-serif;
+            font-size: 14px;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+        }}
+        
+        /* Adjust the main Streamlit container so the footer doesn't hide the bottom content */
+        .main .block-container {{
+            padding-bottom: 80px !important;
+        }}
+    </style>
+    
+    <div class="ei-header-banner"></div>
+    <div class="ei-footer-banner">
+        <strong>Ei</strong> | Impact Dashboard &copy; 2025
+    </div>
+""", unsafe_allow_html=True)
+
 # --- DATA LOADING ---
 SCHOOLS = {
     "Silver Oaks High School (3495131)": "3495131",
