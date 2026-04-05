@@ -1,0 +1,72 @@
+﻿CLASS,Level,SKILL_NAME,"Silver Oaks High School, Visakhapatnam",National Average
+3,,Arithmetic operations: addition and subtraction,69.4174912621,54.168165040094785
+3,,Arithmetic operations: multiplication,57.2815834951,58.48606340894569
+3,Analytical Skill,"Applications in daily life: money, time, calendar, length etc.",37.4757398058,46.45395399108045
+3,Analytical Skill,Applications in daily life: word/visual problems,31.3915708738,47.73073648292727
+3,Analytical Skill,Problem solving: advanced or challenging problems,40.0000058252,43.192106775346936
+3,Core Skill,Basic shapes and geometry,26.2135980583,53.759893924906756
+3,Core Skill,"Number sense, related concepts and basic number competency",55.7281456311,53.11430170172508
+4,,Arithmetic operations: addition and subtraction,51.0924268908,48.68284044945626
+4,,Arithmetic operations: multiplication and division,56.7226680672,51.308242997598576
+4,Analytical Skill,"Applications in daily life: money, time, calendar, length etc.",47.5630369748,49.02011023879426
+4,Analytical Skill,Applications in daily life: word/visual problems,51.8207184874,46.31668718373155
+4,Analytical Skill,Measurement and data interpretation,52.3809546218,51.4245899664151
+4,Analytical Skill,Problem solving: advanced or challenging problems,34.6218453782,41.76622779628963
+4,Core Skill,Basic shapes and geometry,37.6470655462,50.45299977276074
+4,Core Skill,Fractions: concepts and applications,61.3445428571,44.40973872326438
+4,Core Skill,"Number sense, related concepts and basic number competency",65.5462277311,48.616707038193155
+5,Analytical Skill,"Applications in daily life: money, time, calendar, length etc.",51.9774135593,45.715213064128775
+5,Analytical Skill,Applications in daily life: word/visual problems,53.0508491525,44.94580012453758
+5,Analytical Skill,Measurement and data interpretation,64.9152457627,48.61780920285197
+5,Analytical Skill,Problem solving: advanced or challenging problems,49.6610237288,42.376897045434475
+5,Core Skill,"Arithmetic operations: four basic operations, properties",51.016959322,47.23193697805034
+5,Core Skill,Basic shapes and geometry,51.0169508475,50.26588451898463
+5,Core Skill,Fractions: concepts and applications,53.3898457627,40.397873702712374
+5,Core Skill,"Number sense, related concepts and basic number competency",55.7627033898,46.2582219640555
+6,Analytical Skill,Applications in daily life: word/visual problems,38.5416739583,42.721189276706454
+6,Analytical Skill,Area and perimeter: concepts and computations,25.6944322917,40.152113969628786
+6,Analytical Skill,Measurement and data interpretation,49.7916625,48.05392271524651
+6,Analytical Skill,Problem solving: advanced or challenging problems,27.5000229167,36.386912170019606
+6,Core Skill,"Arithmetic operations: four basic operations, properties",41.2499958333,45.11294204518107
+6,Core Skill,Factors and multiples,31.597203125,43.11278180892906
+6,Core Skill,"Fractions and decimals: concepts, use and conversions",42.7083604167,38.623779369207035
+6,Core Skill,Geometry: concepts and applications,57.2916697917,47.30405875568669
+6,Core Skill,"Number sense, related concepts and basic number competency",53.819446875,45.12510815222006
+6,Core Skill,Pre-algebra and algebra skills,62.8472395833,49.20646785331643
+7,Analytical Skill,Algebra: concepts and applications,57.2519099237,42.43441445154482
+7,Analytical Skill,Applications in daily life: word/visual problems,38.7786389313,39.63939630855037
+7,Analytical Skill,Measurement and data interpretation,45.5470679389,48.52428723654211
+7,Analytical Skill,Problem solving: advanced or challenging problems,36.4885305344,37.40843669052444
+7,Core Skill,Factors and multiples,25.6997343511,41.53288335186065
+7,Core Skill,"Fractions, decimals and ratios: concepts and applications",51.6030480916,40.08854622025632
+7,Core Skill,Geometry: concepts and applications,52.4173015267,48.56385248748268
+7,Core Skill,Integers: concepts and applications,69.7201175573,48.9261296054077
+7,Core Skill,"Mensuration: area and perimeter; concepts, computation",40.763348855,37.24721472090916
+7,Core Skill,"Number sense, related competency and computation skills",46.4122183206,42.71702427632181
+8,Analytical Skill,Algebra: concepts and applications,43.9603920792,42.89172792043615
+8,Analytical Skill,Applications in daily life: word/visual problems,39.4059366337,41.55454002931388
+8,Analytical Skill,"Data interpretation/analysis: concept of averages, graph reading, etc.",50.4950851485,42.71007955756743
+8,Analytical Skill,Problem solving: advanced or challenging problems,46.7326712871,37.84951486612606
+8,Core Skill,"Fractions, decimals, ratios and percentages: applications",42.9702990099,43.49246008447583
+8,Core Skill,Geometry: concepts and applications,42.5742554455,40.33998801110653
+8,Core Skill,"Integers and rational numbers, powers and bases",37.0297108911,42.474545612384055
+8,Core Skill,Mensuration: area and perimeter; volume,29.1089069307,36.47058533121149
+8,Core Skill,"Number sense, related competency and computation skills",46.2046,38.772168352074026
+9,,Mensuration: area and perimeter; volume and surface area,41.00000875,33.90361722580113
+9,Analytical Skill,Algebra: concepts and applications,45.50001125,40.178707356937544
+9,Analytical Skill,Applications in daily life: word/visual problems,69.1666725,37.34978614365706
+9,Analytical Skill,Measurement and data interpretation,39.25002125,43.471170243361136
+9,Analytical Skill,Problem solving: advanced or challenging problems,38.250025,35.13056746191713
+9,Core Skill,"Fractions, decimals, ratios and percentages: applications",37.99999125,37.29996652890842
+9,Core Skill,Geometry: concepts and applications,37.18749375,44.04649649169649
+9,Core Skill,"Integers and rational numbers, powers and bases",39.249985,42.997155941471846
+9,Core Skill,"Number sense, related competency and computation skills",51.66666125,38.438181254910916
+10,,Data interpretation statistics and probability,68.6567208955,39.63188114724435
+10,,Mensuration: area and perimeter; volume and surface area,34.6268686567,37.3733873007114
+10,,"Rational and irrational numbers, powers and bases",36.1194134328,43.03457330378382
+10,Analytical Skill,Algebra: concepts and applications,38.8059641791,46.340116066847045
+10,Analytical Skill,Applications in daily life: word/visual problems,47.7611865672,37.20978390193921
+10,Analytical Skill,Measurement and data interpretation,28.3581925373,50.98986048327985
+10,Analytical Skill,Problem solving: advanced or challenging problems,35.5223850746,37.97695041104806
+10,Core Skill,Geometry: concepts and applications,50.1492268657,47.54502061241147
+10,Core Skill,"Number sense, related competency and computation skills",47.1641865672,39.84742816908202

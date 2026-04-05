@@ -1,0 +1,831 @@
+﻿S.No,Class,Section,Name,Total Usage (2025-04-01 to 2026-04-11),Questions Attempted,Accuracy (%),Sparkies
+1,3,A,Aashvi Varma Patchamatla,4 hours 29 minutes,191,44,22
+2,3,A,Akshara Varma Sagi,8 hours 15 minutes,325,88,320
+3,3,A,Anaisha Singh,51 hours 48 minutes,2779,82,2851
+4,3,A,Ashwath Sriram Tammana,38 hours 46 minutes,2989,88,4659
+5,3,A,Atreya Kambhatla,43 hours 53 minutes,5471,88,6658
+6,3,A,Chandra Sivansh J,64 hours 53 minutes,5520,82,5273
+7,3,A,Charanjit Routhu,149 hours 12 minutes,17529,79,13342
+8,3,A,Dhanya Konchada,35 hours 47 minutes,3212,93,5289
+9,3,A,Dishi Sharma,6 hours 16 minutes,387,75,443
+10,3,A,Eshan Sabbineni,5 hours 1 minutes,327,71,539
+11,3,A,Hanshith Nandan Pallapati,17 hours 38 minutes,1827,71,1196
+12,3,A,Ishrith Sanjeevi Sadaram,65 hours 53 minutes,9493,87,10009
+13,3,A,Kaairav Khara,9 hours 5 minutes,445,78,262
+14,3,A,Lashika Ranya Rambarki,51 hours 29 minutes,7388,97,9599
+15,3,A,Mohin Nandhan Surisetty,8 hours 40 minutes,585,87,884
+16,3,A,Naga Keerthi Bommali,30 hours 6 minutes,2024,72,1504
+17,3,A,Renuka Lakshmi Thota,20 hours 29 minutes,785,73,835
+18,3,A,Ruhaan Patibandla,6 hours 41 minutes,634,80,735
+19,3,A,Sai Vihaan Chowdary Golla,56 hours 58 minutes,5006,86,5293
+20,3,A,Samaira Varma Siruvuri,5 hours 5 minutes,461,70,349
+21,3,A,Sv Saanvi,29 hours 25 minutes,1995,75,2366
+22,3,A,Tej Arshith Villuri,104 hours 4 minutes,12490,90,13249
+23,3,A,Urvi Sathi,10 hours 12 minutes,899,99,1928
+24,3,A,Viraj Erabati,12 hours 45 minutes,1206,84,1561
+25,3,A,Yohan Shreekar Gompa,11 hours 19 minutes,956,72,650
+26,3,B,Aashnav Varma Datla,1 hours 48 minutes,76,63,19
+27,3,B,Abhiram Mangipudi,33 hours 55 minutes,4285,88,4643
+28,3,B,Anisha Kallapalli,11 hours 26 minutes,481,89,487
+29,3,B,Arha Devineni,64 hours 4 minutes,4761,82,5666
+30,3,B,Ashvath Roshan Koppolu,44 hours 49 minutes,4193,90,5978
+31,3,B,Avani Adusumilli,14 hours 22 minutes,1262,86,1568
+32,3,B,Ayank Dashrath Konchada,12 hours 51 minutes,763,87,1133
+33,3,B,Bhoomi Poripireddy,59 hours 51 minutes,3913,82,3794
+34,3,B,Iraj Krishna Kurumeti,57 hours 53 minutes,7848,91,9624
+35,3,B,Kashvi Kousalya Botu,10 hours 22 minutes,776,90,1040
+36,3,B,Konisha Badana,26 hours 22 minutes,2145,85,2934
+37,3,B,Krishika Sai Vysyaraju,65 hours 32 minutes,6853,84,6822
+38,3,B,Nainika Vechalapu,29 hours 54 minutes,1866,85,2018
+39,3,B,Neha Sri Machavarapu,27 hours 51 minutes,2174,67,1384
+40,3,B,Nethyksha Uday Pilla,11 hours 19 minutes,663,82,711
+41,3,B,Nihitha Sakhari,6 hours 31 minutes,348,71,259
+42,3,B,Paidi V V S Ruthvik Ram,60 hours 49 minutes,6075,88,7621
+43,3,B,Rishik Golla,15 hours 48 minutes,1260,82,1702
+44,3,B,Rishik Varma Kusampudi,15 hours 53 minutes,1360,71,1190
+45,3,B,Sahasra Sanapala,62 hours 13 minutes,7503,80,5787
+46,3,B,Sai Sanvika Kalidindi,29 hours 45 minutes,3285,88,3710
+47,3,B,Sasidhar Uday Reddy Kankara,17 hours 58 minutes,1322,86,1801
+48,3,B,Shrihaan Ram Mantrarajam,3 hours 1 minutes,216,59,206
+49,3,B,Sreehan Pedada,26 hours 9 minutes,2608,79,2545
+50,3,B,Srushti Ramachandrapurapu,11 hours 42 minutes,676,83,513
+51,3,B,Virat Kante,14 hours 42 minutes,746,82,901
+52,3,C,Aadya Gunni,24 hours 28 minutes,1269,83,1542
+53,3,C,Anipireddy Eesha Reddy,70 hours 9 minutes,3916,94,5945
+54,3,C,Bhavishya Bora,27 hours 47 minutes,1891,63,1720
+55,3,C,Bhavyesh Naidu Lukalapu,38 hours 24 minutes,2749,72,2659
+56,3,C,Chetan Venkata Subramanyam Gudisetti,44 hours 18 minutes,3506,85,5452
+57,3,C,Darsh Varma Rudraraju,25 hours 31 minutes,2175,81,2943
+58,3,C,Disha Saraogi,29 hours 0 minutes,2117,74,1987
+59,3,C,Harisree Surapasetty,32 hours 32 minutes,2062,70,1419
+60,3,C,Harshil Allamsetty,162 hours 26 minutes,16431,90,15687
+61,3,C,Hitanshi Goturu,53 hours 20 minutes,5044,79,5399
+62,3,C,Ivaan Varma Penmetsa,6 hours 12 minutes,756,82,700
+63,3,C,Jayavardhan Bammidi,6 hours 18 minutes,443,74,474
+64,3,C,Joshna Kornu,14 hours 56 minutes,1670,79,1466
+65,3,C,Mohak Abhayram Reddy,5 hours 52 minutes,507,76,418
+66,3,C,Mokshagna Konathala,35 hours 8 minutes,2383,78,2686
+67,3,C,Prerna Sai Chokkakula,14 hours 17 minutes,899,72,630
+68,3,C,Pvssvr Aashrith,124 hours 34 minutes,11783,88,10853
+69,3,C,Reeyansh Raghav Badri,98 hours 22 minutes,7756,73,4822
+70,3,C,Riyansh Doddi,9 hours 21 minutes,600,86,510
+71,3,C,Rudra Trishul Reddy,7 hours 58 minutes,630,72,569
+72,3,C,Ruhaan Raina Paul,50 hours 4 minutes,4413,84,5583
+73,3,C,Ruthvik Karthikeya Mugada,41 hours 11 minutes,4084,77,4864
+74,3,C,Shayan Kiran Penta,74 hours 5 minutes,10870,90,11039
+75,3,C,Shrijaa Mahitha R,32 hours 37 minutes,3369,89,5391
+76,3,C,Vedanshi Divi,58 hours 29 minutes,8437,76,6230
+77,3,C,Viraaj Kaartikeya Jasti,42 hours 6 minutes,3945,87,6110
+78,3,D,Aaradh Prakash Goli,135 hours 41 minutes,9682,87,8379
+79,3,D,Adya Mahalakshmi Koripalli,16 hours 12 minutes,816,73,547
+80,3,D,Akshaya Princess Orsu,15 hours 28 minutes,1427,92,1960
+81,3,D,Arnika Gunta,29 hours 14 minutes,2976,86,3525
+82,3,D,Chaitrasri Kurasala,53 hours 41 minutes,2960,86,4393
+83,3,D,Chaitrika Kruthi Kanakala,61 hours 42 minutes,7530,87,8509
+84,3,D,Darsh Daga,41 hours 25 minutes,1840,81,1689
+85,3,D,Hamaira Kaur Anand,75 hours 6 minutes,9610,87,11939
+86,3,D,Hansik Girada,92 hours 46 minutes,9635,90,11076
+87,3,D,Ivaana Nalam,4 hours 2 minutes,234,82,156
+88,3,D,Jaanvika Kasimahanthi,60 hours 33 minutes,5022,88,6837
+89,3,D,Koumudi Mallina,10 hours 39 minutes,796,92,1596
+90,3,D,Lohith Datta Vavilapalli,53 hours 41 minutes,3228,83,3983
+91,3,D,Murthy Leenisha Ssr,4 hours 53 minutes,489,79,437
+92,3,D,Nihal Ramam Pappala,45 hours 33 minutes,8052,85,7707
+93,3,D,Parichay Reddy M,39 hours 37 minutes,2817,90,4455
+94,3,D,Prakshitha Jairaj Kuchipudi,26 hours 52 minutes,1669,93,2951
+95,3,D,Riya Varma Dantuluri,43 hours 5 minutes,3385,81,4171
+96,3,D,Ryaan Sindhi,82 hours 2 minutes,12780,91,12856
+97,3,D,Saisha Alapati,2 hours 19 minutes,37,92,42
+98,3,D,Samar Raj Dutt Kancharla,15 hours 53 minutes,1369,83,1706
+99,3,D,Satya Vihaan Dandugula,123 hours 4 minutes,11978,89,12123
+100,3,D,Shree Krishna Das Dharmana,4 hours 0 minutes,253,83,139
+101,3,D,Shriansh Sai Gantasala,6 hours 31 minutes,743,71,901
+102,3,D,Srihan Varma Dantuluri,80 hours 1 minutes,13616,92,13634
+103,3,D,Tashi Hirawat,4 hours 17 minutes,141,66,31
+104,4,A,Aadhya Siri Kottu,17 hours 38 minutes,1010,70,952
+105,4,A,Abhijit Sundara Pudipeddi Vijaya Venkata Subramany,91 hours 42 minutes,10652,83,13472
+106,4,A,Abhiram Bandi,55 hours 13 minutes,5946,80,7457
+107,4,A,Aditi Dantuluri,22 hours 26 minutes,2117,73,1773
+108,4,A,Alla Sohan Chandra Reddy,22 hours 4 minutes,1687,81,2379
+109,4,A,Anoohya Patra,17 hours 51 minutes,1072,74,987
+110,4,A,Antara Korrapati,87 hours 56 minutes,6286,86,9445
+111,4,A,Avika Katari,5 hours 43 minutes,482,72,770
+112,4,A,Darshitha Rapeti,15 hours 5 minutes,1143,72,858
+113,4,A,Dhanya Princess Orsu,36 hours 59 minutes,3587,90,5901
+114,4,A,Havish Roy Boddepalli,19 hours 43 minutes,1593,55,562
+115,4,A,Ishanth Das Yalla,12 hours 25 minutes,996,77,1040
+116,4,A,Jakshua Saragadam,8 hours 34 minutes,600,65,385
+117,4,A,Jiya Aadhya Behara,13 hours 7 minutes,715,82,1075
+118,4,A,Keshav Sivaansh Thota,23 hours 59 minutes,1853,79,2891
+119,4,A,Kiranyashree Ruchi Gundala,68 hours 30 minutes,5898,90,8654
+120,4,A,Kiyaa Karnani,13 hours 13 minutes,735,77,818
+121,4,A,Laksh Polaki,39 hours 10 minutes,3596,62,3025
+122,4,A,Naga Venkata Ved Aryan Kalepalli,51 hours 53 minutes,11990,86,16427
+123,4,A,Ravu Shakti Nytik Krishna Rangarao,21 hours 48 minutes,2198,67,2868
+124,4,A,Rehansi Teja Reddy,8 hours 40 minutes,643,65,404
+125,4,A,Sri Guru Charan Lanka,77 hours 46 minutes,8553,82,9732
+126,4,A,Yaksha Abhilash Pasupuleti,3 hours 15 minutes,314,86,578
+127,4,B,Aadhya Javvaji,42 hours 59 minutes,2502,86,4319
+128,4,B,Aadhyaa Amirneni,9 hours 17 minutes,963,66,605
+129,4,B,Ahaan Venkat Jammula,52 hours 21 minutes,3183,87,4864
+130,4,B,Anniv Katneni,5 hours 2 minutes,425,55,200
+131,4,B,B Diyaan Bernie,1 hours 41 minutes,113,75,139
+132,4,B,Jai Kritik Grandhi,42 hours 14 minutes,6348,66,5673
+133,4,B,Jashvika Sri Valli Irrinki,10 hours 1 minutes,610,78,777
+134,4,B,Joseph Immanuel Varigeti,74 hours 42 minutes,8116,79,10588
+135,4,B,K Esita,36 hours 54 minutes,3270,76,3240
+136,4,B,Kriti Sahassra Vattikuti,4 hours 54 minutes,273,88,348
+137,4,B,Lishika Munagala,45 hours 1 minutes,1693,71,1530
+138,4,B,M L S Anjani,42 hours 8 minutes,5986,87,8270
+139,4,B,Nandan Talluri,6 hours 8 minutes,350,81,167
+140,4,B,Narayanamurthy Karthikeya Lolla,26 hours 53 minutes,2496,74,2801
+141,4,B,Ruhika Gudapaty,46 hours 47 minutes,4345,65,4611
+142,4,B,Ruthvika Gudapaty,88 hours 24 minutes,5075,73,7309
+143,4,B,Saiprarthana Chetty,5 hours 40 minutes,530,70,347
+144,4,B,Shresta Sree Koratam,14 hours 5 minutes,473,86,320
+145,4,B,Sri Prathik Reddy Gudimetla,55 hours 15 minutes,5495,75,6756
+146,4,B,Suhas Vilohit Reddy Konudula,26 hours 33 minutes,2527,51,1273
+147,4,B,Varshini Tummala,104 hours 32 minutes,7249,74,7594
+148,4,B,Vihaan Bhartia,66 hours 49 minutes,6027,71,7767
+149,4,B,Vihaan Sri Karthikeya Kaligatla,13 hours 56 minutes,828,62,490
+150,4,B,Viraaj Ayansh Medapati,67 hours 31 minutes,6412,93,13495
+151,4,B,Yashasvi Doddi,2 hours 36 minutes,141,93,261
+152,4,C,Aditi Govind Rajan,25 hours 33 minutes,2479,63,1685
+153,4,C,Arjun Jaggia Sharma,26 hours 59 minutes,3489,79,4680
+154,4,C,Charani Vallurupalli,27 hours 57 minutes,1336,73,1628
+155,4,C,Ishaan Muripindi,34 hours 35 minutes,2314,75,1981
+156,4,C,Jiya Goyal,38 hours 37 minutes,2134,76,2838
+157,4,C,Maitreyi Yenneti,10 hours 0 minutes,840,74,881
+158,4,C,Manvitha Akkineni,8 hours 29 minutes,743,72,433
+159,4,C,Moksha Aradhya Pollamarasetty,38 hours 12 minutes,3631,77,4836
+160,4,C,Rekhanksha Gogada,35 hours 20 minutes,1863,73,1674
+161,4,C,Reyan Sai Grandhi,29 hours 43 minutes,2763,74,2783
+162,4,C,Sai Khyathi Sree Balina,40 hours 8 minutes,2842,75,2919
+163,4,C,Sampath Khyathi Varma Vatsavai,1 hours 34 minutes,96,80,50
+164,4,C,Satvik Patra,51 hours 46 minutes,5190,89,8557
+165,4,C,Shreya Venkata Tamminana,91 hours 6 minutes,8236,95,13783
+166,4,C,Sri Aadhya Karaka,16 hours 50 minutes,691,77,723
+167,4,C,Sumana Penumetsa,6 hours 11 minutes,528,81,494
+168,4,C,Syed Mohammad Ali,35 hours 28 minutes,3015,76,4084
+169,4,C,Tanay Jain,50 hours 4 minutes,3976,75,5516
+170,4,C,Tavish Agrawal,32 hours 16 minutes,2822,88,5660
+171,4,C,Tirumala Anjali,14 hours 27 minutes,1357,77,1707
+172,4,C,Vedh Kummaraganti,62 hours 45 minutes,4908,80,7179
+173,4,C,Vikhyath Vadapalli,89 hours 59 minutes,5038,86,8575
+174,4,D,Aadhya Samskruthi Bala,38 hours 58 minutes,3680,77,4222
+175,4,D,Aarvi Pothula,20 hours 39 minutes,1703,73,1347
+176,4,D,Aashritha Jakkampudi,4 hours 31 minutes,296,72,114
+177,4,D,Akshaya Dhrithi Gangisetty,3 hours 7 minutes,140,73,31
+178,4,D,Amyra Kanagala,19 hours 33 minutes,1027,91,1603
+179,4,D,Arnika Inturi,39 hours 13 minutes,3165,75,3468
+180,4,D,Ashwath Mallampati,38 hours 6 minutes,4608,85,7642
+181,4,D,Harsha Saisathyadev Saripalli,95 hours 45 minutes,9599,77,8935
+182,4,D,Hasan Chandra Chaganti,13 hours 31 minutes,1504,85,2223
+183,4,D,Himansh Sappa,12 hours 48 minutes,872,74,785
+184,4,D,Mohit Machavarapu,105 hours 29 minutes,18496,59,10114
+185,4,D,Mokshaa Nandita Vempati,28 hours 31 minutes,2389,89,3592
+186,4,D,Neel Kuna,63 hours 42 minutes,8703,72,6802
+187,4,D,Nihira Chandra Ravi,23 hours 2 minutes,1472,89,2701
+188,4,D,Nithya Shri Kavuri,96 hours 8 minutes,7956,77,9282
+189,4,D,Reva Teegala,11 hours 30 minutes,824,58,611
+190,4,D,Reya Yukthi Datla,4 hours 59 minutes,213,62,69
+191,4,D,Saanvika Varma Chekuri,3 hours 18 minutes,88,88,39
+192,4,D,Sahasritha Pasumarthi,18 hours 42 minutes,1344,69,1306
+193,4,D,Sai Arshi Allada,10 hours 43 minutes,1013,72,1614
+194,4,D,Sree Aashi Badana,51 hours 54 minutes,4422,78,4150
+195,4,D,Venkata Vivin Rama Raju Kalidindi,28 hours 47 minutes,2507,71,3214
+196,4,D,Vivaan Davala,28 hours 13 minutes,1668,80,2394
+197,4,D,Vivaan Raj Kurminaidu,30 hours 8 minutes,2724,89,4762
+198,4,D,Yahaan Pentapati,20 hours 39 minutes,805,80,605
+199,4,E,Aaradhya Vasireddy,15 hours 21 minutes,1814,93,3921
+200,4,E,Akhil Varma Sagiraju,18 hours 50 minutes,1131,63,769
+201,4,E,Atharva Ayyagari,74 hours 30 minutes,4098,74,4695
+202,4,E,Deesha Singhi,31 hours 14 minutes,2567,74,2781
+203,4,E,Dhruv Deepamshu Chebolu,22 hours 32 minutes,2166,76,2360
+204,4,E,Eswara Dhruva Madeti,23 hours 10 minutes,1289,75,1272
+205,4,E,Jayesh Saragadam,13 hours 46 minutes,755,85,1285
+206,4,E,Karthikeya Varma Kutcharlapati,66 hours 58 minutes,6809,81,9247
+207,4,E,Lohitha Sancia Injarapu,11 hours 10 minutes,536,78,428
+208,4,E,Nihaan Lokavarapu,55 hours 13 minutes,2716,88,4293
+209,4,E,Nihaan Sriyansh Kundrapu,4 hours 16 minutes,302,57,90
+210,4,E,Pranushka Suresh Anga,76 hours 22 minutes,5416,79,8119
+211,4,E,Sai Dhanya Sri Siriki,128 hours 40 minutes,11512,76,10004
+212,4,E,Satya Raj,10 hours 8 minutes,833,82,738
+213,4,E,Vanshika Balaga,29 hours 46 minutes,2550,78,2474
+214,4,E,Vedaryan Yagneshwar,3 hours 29 minutes,229,85,183
+215,4,E,Veekshith Banavathu,60 hours 14 minutes,2623,81,3486
+216,4,E,Venkat Sri Laasya Padmanabhan,32 hours 31 minutes,2762,61,1300
+217,4,E,Venkata Reshwanth Naidu Kimidi,128 hours 14 minutes,12496,86,16479
+218,4,E,Venkata Siva Naga Snigdha Kanchi,0 hours 0 minutes,0,0,0
+219,4,E,Viraat Chapara,17 hours 59 minutes,1380,77,2180
+220,4,E,Vishnu Vihaan Kommula,3 hours 4 minutes,427,75,235
+221,4,E,Vivaan Penmatsa,0 hours 0 minutes,0,0,0
+222,4,E,Vrinda Gurram,0 hours 0 minutes,0,0,0
+223,4,E,Yuvan Haranadh,17 hours 14 minutes,2174,83,3274
+224,5,A,Ashwath K,15 hours 14 minutes,1667,81,3550
+225,5,A,Dhruti Abbineni,13 hours 3 minutes,940,70,963
+226,5,A,Harianvita Bonthu,89 hours 18 minutes,4255,81,5927
+227,5,A,Harsh T,33 hours 47 minutes,4355,79,6798
+228,5,A,Hima Srisai,65 hours 42 minutes,7050,83,11061
+229,5,A,Ishaan Varma Penmetsa,0 hours 36 minutes,64,42,9
+230,5,A,Jayanthphani Thota,31 hours 50 minutes,2444,78,3054
+231,5,A,Joshseraph Varigeti,109 hours 21 minutes,7024,75,7930
+232,5,A,Krishna Katragadda,37 hours 54 minutes,3970,75,5311
+233,5,A,Laasyavi Kodebattula,68 hours 29 minutes,7297,85,12242
+234,5,A,Lavin Vadamodula,38 hours 17 minutes,3006,82,4619
+235,5,A,Nadikoppu Aarav,31 hours 7 minutes,3092,79,4671
+236,5,A,Nandhini Vana,6 hours 45 minutes,516,83,931
+237,5,A,Paarthvi Palepu,30 hours 40 minutes,2598,71,2996
+238,5,A,Pratyush Padia,69 hours 43 minutes,7944,77,9455
+239,5,A,Ranvith Ravella,21 hours 44 minutes,2954,78,3926
+240,5,A,Saathvik P,0 hours 20 minutes,6,100,4
+241,5,A,Sahar Koilada,5 hours 5 minutes,404,64,74
+242,5,A,Satya Adusumilli,20 hours 46 minutes,1217,67,772
+243,5,A,Shamwika Nadh,0 hours 0 minutes,0,0,0
+244,5,A,Sriramshreyas Kodi,47 hours 58 minutes,3600,73,4348
+245,5,A,Tonya Akshara,8 hours 2 minutes,711,80,927
+246,5,A,Vemela Jashmitha,1 hours 38 minutes,94,76,51
+247,5,A,Vinay Narra,19 hours 6 minutes,1860,86,3833
+248,5,B,Aadhya Dannana,0 hours 0 minutes,0,0,0
+249,5,B,Aarush Theegala,20 hours 13 minutes,1864,81,3298
+250,5,B,Aarushvarma Tirumalaraju,0 hours 0 minutes,0,0,0
+251,5,B,Aashrithvarma Penumatsa,127 hours 50 minutes,12907,93,22477
+252,5,B,Adityashastri Malladi,13 hours 42 minutes,1033,70,834
+253,5,B,Ashvika Dandu,0 hours 1 minutes,0,0,0
+254,5,B,Avyukt Kornu,8 hours 39 minutes,496,84,238
+255,5,B,Bhavika Nooka,17 hours 50 minutes,872,82,881
+256,5,B,Ikya Yalamanchili,17 hours 49 minutes,973,87,1104
+257,5,B,Jasmitha Mullapudi,10 hours 10 minutes,610,71,908
+258,5,B,Manasvi Avugadda,23 hours 10 minutes,1355,88,2231
+259,5,B,Mrigasya Maramreddy,0 hours 37 minutes,36,56,0
+260,5,B,Pranav Devulapalli,29 hours 26 minutes,2064,89,3322
+261,5,B,Praneethkumar Moturi,4 hours 32 minutes,271,66,196
+262,5,B,Sai S,3 hours 49 minutes,301,81,525
+263,5,B,Sai Shritan Vehaan,5 hours 50 minutes,164,76,24
+264,5,B,Srividya Reddy,40 hours 46 minutes,2299,73,1709
+265,5,B,Tridev Koppu,0 hours 0 minutes,0,0,0
+266,5,B,Vaibhavi Chakravarthy,0 hours 10 minutes,0,0,0
+267,5,B,Vihaan Chadalavada,7 hours 36 minutes,1028,69,817
+268,5,B,Vihaankarthik Vangapandu,8 hours 24 minutes,960,85,1723
+269,5,B,Yashwant Sajja,55 hours 0 minutes,3436,65,2098
+270,5,B,satya arun,3 hours 13 minutes,132,63,12
+271,5,C,Abhiram Masina,58 hours 34 minutes,4922,77,4687
+272,5,C,Advika Turumalla,15 hours 11 minutes,680,82,1040
+273,5,C,Aksharaveena Sundarapu,0 hours 25 minutes,38,64,11
+274,5,C,Anandi Polamarasetty,19 hours 23 minutes,1811,75,1492
+275,5,C,Chaitrasahasra Karri,4 hours 11 minutes,403,80,303
+276,5,C,Diya Hansika,10 hours 7 minutes,1030,82,768
+277,5,C,Drithi Imandi,5 hours 51 minutes,260,84,304
+278,5,C,Hitesh Gorejalli,1 hours 28 minutes,63,65,31
+279,5,C,Ishithasaranya Mylipalli,23 hours 7 minutes,1215,81,2310
+280,5,C,Jatin Rao,15 hours 42 minutes,1392,81,1521
+281,5,C,Leah Manchukonda,10 hours 16 minutes,292,76,273
+282,5,C,Nirvaan Yenigandla,16 hours 27 minutes,1480,71,2363
+283,5,C,Pradaksha Tirumalaraju,4 hours 48 minutes,167,71,156
+284,5,C,Ritesh Modekurti,47 hours 9 minutes,3204,62,2217
+285,5,C,Shanvi Murkuri,35 hours 14 minutes,3227,79,4212
+286,5,C,Sohan Yenneti,16 hours 46 minutes,1457,71,1630
+287,5,C,Sourya Bonthu,0 hours 0 minutes,0,0,0
+288,5,C,Srivatsa Dattu,2 hours 21 minutes,89,51,9
+289,5,C,Sudeepa Konjeti,5 hours 27 minutes,293,80,236
+290,5,C,Tanush Goluguri,23 hours 31 minutes,2097,73,1961
+291,5,C,Tarakritha M,4 hours 44 minutes,392,67,152
+292,5,C,Thanvi Murkuri,45 hours 54 minutes,3699,75,4974
+293,5,C,Vishalnarasimha Damera,26 hours 37 minutes,1947,70,1696
+294,5,D,Aarvi Meka,32 hours 47 minutes,2297,76,1532
+295,5,D,Abhiram Sagiraju,4 hours 9 minutes,189,62,58
+296,5,D,Ananya Potluri,10 hours 23 minutes,689,87,1075
+297,5,D,Arjun Rama Raju Kallapalli,0 hours 57 minutes,22,82,5
+298,5,D,Bhuvija Gayatri,21 hours 20 minutes,891,72,702
+299,5,D,Dhevansh Rudraraju,8 hours 52 minutes,557,84,583
+300,5,D,Hareensairam Kommareddy,35 hours 17 minutes,4041,84,8007
+301,5,D,Hema Vasudha,211 hours 34 minutes,28425,88,39071
+302,5,D,Jaswin Mullapudi,47 hours 40 minutes,5888,80,9026
+303,5,D,Khushal Boyina,26 hours 1 minutes,5724,64,6133
+304,5,D,Khyati Kalidindi,14 hours 35 minutes,1631,79,2285
+305,5,D,Lithikasree Penugonda,8 hours 23 minutes,537,87,353
+306,5,D,Mihirareddy Maramreddy,4 hours 30 minutes,242,78,197
+307,5,D,Nandanvasudev Dangudubiyyapu,7 hours 30 minutes,631,72,776
+308,5,D,Rishithasrikrishnapriya Mylapalli,15 hours 17 minutes,1081,84,2024
+309,5,D,Sasivanth Jampana,46 hours 46 minutes,6853,71,6505
+310,5,D,Sreekriti Alapati,5 hours 23 minutes,219,88,155
+311,5,D,Sridhruti Vemulapalli,11 hours 7 minutes,594,79,1126
+312,5,D,Sriyan Koripalli,100 hours 28 minutes,15047,94,24840
+313,5,D,Vanvyasri Sirigina,12 hours 58 minutes,732,84,1015
+314,5,D,Vellanki Jai,21 hours 4 minutes,1625,79,1916
+315,5,D,Venkata Peddireddy,30 hours 54 minutes,2287,76,3585
+316,5,D,Vismayadhara Koya,22 hours 42 minutes,1019,84,1034
+317,5,D,Yasasvi Yaganti,0 hours 12 minutes,0,0,0
+318,5,D,Yojan Dutta,9 hours 15 minutes,401,56,157
+319,5,E,Akshita Kagupati,16 hours 48 minutes,1728,72,2006
+320,5,E,Avyukth Sreedharala,24 hours 13 minutes,1436,84,1372
+321,5,E,Geethvikram Girada,49 hours 10 minutes,3034,83,5664
+322,5,E,Harsh Agrawal,1 hours 6 minutes,35,81,13
+323,5,E,Ishanvi Kilaru,18 hours 18 minutes,1935,79,3081
+324,5,E,Ishitha Nehal,52 hours 32 minutes,6026,70,5834
+325,5,E,Jayaramreddy Nallamilli,41 hours 56 minutes,5116,69,4912
+326,5,E,Kajjali Gadi,5 hours 42 minutes,485,69,423
+327,5,E,Lalitavrinda Pyda,6 hours 56 minutes,508,70,919
+328,5,E,Lekhya Reddi,34 hours 20 minutes,2293,79,4314
+329,5,E,Madurya Juttu,6 hours 36 minutes,407,80,224
+330,5,E,Parnikaradha Buddha,4 hours 24 minutes,198,81,81
+331,5,E,Rithwik Muripindi,26 hours 52 minutes,2292,68,1514
+332,5,E,Saisriyan Kotagiri,29 hours 19 minutes,1844,85,3336
+333,5,E,Satyavenkat Malladi,6 hours 26 minutes,361,59,91
+334,5,E,Siorsha Poosarla,37 hours 45 minutes,3740,81,5497
+335,5,E,Sri Gogineni,11 hours 35 minutes,582,48,285
+336,5,E,Sri Yoshika,16 hours 6 minutes,1381,72,1422
+337,5,E,Suhasvarma Chekuri,14 hours 55 minutes,1400,74,2167
+338,5,E,Suswara Sattaru,28 hours 16 minutes,3330,82,5889
+339,5,E,Swaraswapnil Patil,24 hours 17 minutes,2191,78,2460
+340,5,E,Swasya Yalavarthi,7 hours 26 minutes,481,76,450
+341,5,E,Tanish Tattikala,34 hours 52 minutes,1558,53,1107
+342,5,E,Venkata Vegi,53 hours 34 minutes,4965,80,7122
+343,5,E,Viraj Pydavenkata,16 hours 28 minutes,2234,69,3125
+344,6,A,Aaryan Enireddy,13 hours 37 minutes,1509,72,1252
+345,6,A,Agastya Kambhatla,10 hours 57 minutes,1084,81,1214
+346,6,A,Akshith Gangavarapu,10 hours 27 minutes,1036,75,966
+347,6,A,Bhuvanasantoshikarthika Mugada,30 hours 30 minutes,3324,62,2327
+348,6,A,Darsshil Kottu,36 hours 18 minutes,4467,81,4263
+349,6,A,Haanvika Kammila,210 hours 13 minutes,6015,89,7489
+350,6,A,Harshini Tummala,98 hours 4 minutes,5760,59,4042
+351,6,A,Harshitha Kalva,18 hours 19 minutes,1065,64,866
+352,6,A,Jayathiasmi Gudivada,20 hours 44 minutes,1484,75,1432
+353,6,A,Lakshmisahasvi Parimi,12 hours 21 minutes,1038,66,612
+354,6,A,Lakshyya Jeloka,12 hours 49 minutes,1334,77,1287
+355,6,A,Likhilvallabh Chebolu,13 hours 3 minutes,1006,74,707
+356,6,A,Manav Choudhry,60 hours 30 minutes,3816,88,4559
+357,6,A,Mihika Nuthakki,2 hours 6 minutes,226,88,287
+358,6,A,Nihirasree Chandra,21 hours 19 minutes,780,75,814
+359,6,A,Prem Ravuri,16 hours 28 minutes,744,79,895
+360,6,A,Rajasagi Surya Vihaan Varma,26 hours 32 minutes,2015,78,2330
+361,6,A,Rohana Yerramsetty,5 hours 6 minutes,421,66,462
+362,6,A,Saharya Thakasi,8 hours 29 minutes,1006,50,377
+363,6,A,Satyavenkatasashrith Parimi,13 hours 18 minutes,934,71,634
+364,6,A,Shaik Jalila,6 hours 32 minutes,405,78,267
+365,6,A,Shaurya Sharma,10 hours 11 minutes,1395,72,1553
+366,6,A,Vihaas Shivraj,4 hours 44 minutes,712,45,132
+367,6,A,Yaksha Santhapuri,21 hours 38 minutes,1239,76,1187
+368,6,A,deekshita SAI,5 hours 21 minutes,639,52,242
+369,6,B,Aadrit Gunni,22 hours 9 minutes,1121,82,1175
+370,6,B,Aadya Rudraraju,28 hours 22 minutes,1175,78,1135
+371,6,B,Aaravvarma K,10 hours 2 minutes,790,67,492
+372,6,B,Harshith Batchu,30 hours 58 minutes,2092,78,2593
+373,6,B,Havisha Yellapu,31 hours 0 minutes,1398,66,976
+374,6,B,Hrushil Koripalli,18 hours 10 minutes,464,76,404
+375,6,B,Likithaphani Konthala,8 hours 15 minutes,567,77,822
+376,6,B,Manomay Chauhan,26 hours 29 minutes,2375,76,2741
+377,6,B,Nandini Kanumaluri,6 hours 23 minutes,374,82,440
+378,6,B,Nikil Uppalapati,18 hours 46 minutes,1141,77,897
+379,6,B,Pari Jain Chajjer,8 hours 3 minutes,434,58,106
+380,6,B,Rajasagi Isha Varma,44 hours 17 minutes,3695,59,2278
+381,6,B,Rhea Sarwate,11 hours 29 minutes,600,90,908
+382,6,B,Ridhanhirawat Jain,12 hours 56 minutes,1309,72,1124
+383,6,B,Saanvi Chowdary Manne,35 hours 52 minutes,2907,81,3516
+384,6,B,Saisuhaana Krushna,19 hours 28 minutes,1076,67,1031
+385,6,B,Sanvit Polamarasetty,7 hours 21 minutes,425,71,193
+386,6,B,Shaik Ahmed,4 hours 28 minutes,509,83,566
+387,6,B,Shanaya Garg,14 hours 45 minutes,1689,81,2183
+388,6,B,Shri Varnika,45 hours 46 minutes,4682,68,3591
+389,6,B,Srinanthan K,0 hours 43 minutes,89,78,58
+390,6,B,Tanmayee Sripadasadaram,40 hours 47 minutes,3220,83,3749
+391,6,B,Viraj Vempati,4 hours 12 minutes,491,80,644
+392,6,B,Yug Saraogi,17 hours 13 minutes,1462,83,1575
+393,6,C,Abhiram Gude,8 hours 37 minutes,665,81,754
+394,6,C,Anvi Bollina,29 hours 6 minutes,2135,57,1127
+395,6,C,Aryanvarma Buddaraju,4 hours 45 minutes,369,87,603
+396,6,C,Ashishdarahas Karrothu,121 hours 9 minutes,4385,61,2602
+397,6,C,Bavyasrijashrita Kavikondala,41 hours 31 minutes,2557,87,3413
+398,6,C,Dinakarreddy Punuru,30 hours 59 minutes,3123,80,3715
+399,6,C,Gowthamsai Lakumdas,11 hours 32 minutes,1627,60,950
+400,6,C,Haadvin Polineni,27 hours 42 minutes,1339,74,1229
+401,6,C,Haasini Chalagalla,31 hours 25 minutes,2731,57,1464
+402,6,C,Jessvika Saragadam,10 hours 51 minutes,584,65,301
+403,6,C,Kapish Teegala,11 hours 19 minutes,882,58,673
+404,6,C,Kriti Kodali,25 hours 59 minutes,1830,62,1432
+405,6,C,Manasvi Namala,15 hours 51 minutes,1678,63,782
+406,6,C,Manjushamani Chilukuri,4 hours 53 minutes,287,76,182
+407,6,C,Nihira Kommana,5 hours 50 minutes,520,75,380
+408,6,C,Puneeth Karri,0 hours 45 minutes,94,57,80
+409,6,C,Rihansh Kashyap,0 hours 1 minutes,0,0,0
+410,6,C,Rishiakhilbrahma Dasari,31 hours 31 minutes,3740,70,3675
+411,6,C,Sahasra Somaram,18 hours 33 minutes,1370,82,1959
+412,6,C,Saketh Akella,25 hours 19 minutes,3415,94,5498
+413,6,C,Samarth Puvvala,29 hours 43 minutes,4462,71,4081
+414,6,C,Sasimasri Reddy,0 hours 8 minutes,37,73,134
+415,6,C,Sharonajaydadi Reddy,99 hours 48 minutes,8435,77,8638
+416,6,C,Sonakshi Thota,19 hours 37 minutes,1980,71,1743
+417,6,C,Tanaaya Ijjapureddy,21 hours 0 minutes,1805,74,1949
+418,6,C,Vihas Isarapu,9 hours 29 minutes,572,69,451
+419,6,D,Aadyavarma Datla,5 hours 14 minutes,466,81,448
+420,6,D,Aarya Yarlagadda,35 hours 44 minutes,3244,60,2393
+421,6,D,Abhinavvarma Vegesna,42 hours 23 minutes,2581,75,2368
+422,6,D,Aditi Garuda,29 hours 16 minutes,3618,90,5346
+423,6,D,Akshainie Ghugulovathu,51 hours 4 minutes,4670,74,4314
+424,6,D,Arnav Gunta,77 hours 42 minutes,8468,73,7809
+425,6,D,Bhuvaneshkrishna Varma,32 hours 16 minutes,3258,86,4465
+426,6,D,Gauthamvihaan Koppolu,39 hours 33 minutes,4953,87,5601
+427,6,D,Hrithika Suvvari,2 hours 35 minutes,270,84,297
+428,6,D,Irya Yalamanchili,22 hours 1 minutes,1276,85,1531
+429,6,D,Jasimika Yenreddy,15 hours 55 minutes,1826,80,2382
+430,6,D,Karthikeya Reddy Kanduluri,17 hours 50 minutes,2595,84,3420
+431,6,D,Midhuna,31 hours 43 minutes,2137,69,1521
+432,6,D,Midhuna Edru,22 hours 41 minutes,1542,79,1925
+433,6,D,Nainikareddy Vudum,23 hours 18 minutes,2400,58,1683
+434,6,D,Prasanna Penchala Atluri,41 hours 49 minutes,2824,61,2084
+435,6,D,Rishi Kante,21 hours 15 minutes,1359,77,1351
+436,6,D,Saanchi Kansaria,42 hours 28 minutes,2241,65,1748
+437,6,D,Saharsh Bharanikana,63 hours 59 minutes,7949,72,5768
+438,6,D,Sanvithjoy Chintalapati,31 hours 6 minutes,5066,85,6092
+439,6,D,Saran Kolli,36 hours 41 minutes,3406,81,3968
+440,6,D,Sneha Khanna,46 hours 26 minutes,4931,77,4322
+441,6,D,Sreegyana Prasoona,41 hours 41 minutes,3444,81,4407
+442,6,D,Sri Anjan,1 hours 45 minutes,320,81,453
+443,6,D,Sudarsh Srivatsavaye,22 hours 50 minutes,1578,73,1417
+444,6,D,Tanujhalakshmi Baranikana,41 hours 38 minutes,2933,71,3143
+445,7,A,Aadya Vegulla,0 hours 53 minutes,8,86,2
+446,7,A,Aditya Satyam,2 hours 23 minutes,171,67,211
+447,7,A,Adwiti Bangur,0 hours 52 minutes,27,44,0
+448,7,A,Akshaj Bonthu,1 hours 51 minutes,116,64,79
+449,7,A,Anvie Mimani,17 hours 31 minutes,379,86,277
+450,7,A,Bhavith Ethamukkala,58 hours 17 minutes,1335,80,493
+451,7,A,Geethanjali Penmetsa,4 hours 16 minutes,331,88,599
+452,7,A,Harshal Anand,14 hours 44 minutes,216,71,294
+453,7,A,Hitasaura Chintalapati,10 hours 12 minutes,749,81,730
+454,7,A,Krish Katari,2 hours 10 minutes,286,71,241
+455,7,A,Kushal Sanga,5 hours 17 minutes,449,82,449
+456,7,A,Nehanth Uppada,19 hours 34 minutes,2962,89,3663
+457,7,A,Padala Jaivanth Karthikeya Reddy,1 hours 21 minutes,133,80,83
+458,7,A,Pushkharsai Baranikana,19 hours 33 minutes,1869,71,2080
+459,7,A,Rayyan Dhanuka,4 hours 19 minutes,656,87,600
+460,7,A,Samanvi Siruvuri,5 hours 38 minutes,386,72,465
+461,7,A,Shaik Mujaffar,0 hours 0 minutes,0,0,0
+462,7,A,Shaik Riyaz,4 hours 4 minutes,319,63,272
+463,7,A,Shaikahmad Raza,4 hours 18 minutes,376,73,318
+464,7,A,Sudiksha Lakkoju,8 hours 28 minutes,300,81,292
+465,7,A,Suhassistu Sistu,0 hours 33 minutes,24,40,1
+466,7,A,Tanusha Kakarla,7 hours 58 minutes,507,87,564
+467,7,A,Tejanagaannapurna Garapati,16 hours 22 minutes,599,77,773
+468,7,A,Vedanshi Sri Sai,0 hours 6 minutes,0,0,0
+469,7,A,Venkatakhushal Theegala,2 hours 19 minutes,114,85,74
+470,7,A,Venkatakhyathi Annam,40 hours 58 minutes,2815,69,2373
+471,7,A,Vishanth Alla,1 hours 15 minutes,63,64,10
+472,7,B,Aadhya Pothula,20 hours 49 minutes,1591,68,1511
+473,7,B,Aadhyanvi Jenjeti,25 hours 8 minutes,809,74,838
+474,7,B,Akshara Vellanki,2 hours 20 minutes,135,66,150
+475,7,B,Ananya Adusumilli,9 hours 16 minutes,1457,88,1682
+476,7,B,Anvithareddy Tetali,6 hours 45 minutes,318,77,203
+477,7,B,Ashish Malepat,22 hours 22 minutes,1677,64,1528
+478,7,B,Dhruthysubhaga Vempati,4 hours 28 minutes,113,83,95
+479,7,B,Geethsrisujalreddy Sathi,7 hours 1 minutes,229,56,67
+480,7,B,Jaikrishna Nannapaneni,16 hours 26 minutes,692,85,728
+481,7,B,Karthikeya Aditya Reddy Kankara,23 hours 25 minutes,1906,75,2286
+482,7,B,Keesha Bheemanadam,13 hours 41 minutes,795,82,793
+483,7,B,Kushwanth Bandaru,0 hours 41 minutes,26,32,0
+484,7,B,Lakshmiakshita Kodamanchili,6 hours 51 minutes,113,56,13
+485,7,B,Madhuravalli Kosuri,1 hours 6 minutes,26,55,2
+486,7,B,Marcussujeev Prathi,5 hours 11 minutes,698,82,964
+487,7,B,Megha Perla,9 hours 32 minutes,910,74,408
+488,7,B,Meghana Sagiraju,6 hours 27 minutes,242,77,296
+489,7,B,Neehal Sai,0 hours 42 minutes,25,17,0
+490,7,B,Nishalmaurya Amara,25 hours 19 minutes,1661,77,2002
+491,7,B,Nitya sri,0 hours 0 minutes,0,0,0
+492,7,B,Ram Satya Rithvik Paiyidiparty,14 hours 51 minutes,1639,69,1590
+493,7,B,Sahana Saripella,6 hours 49 minutes,602,76,603
+494,7,B,Saisha Ganapathiraju,17 hours 35 minutes,1650,77,1398
+495,7,B,Saswathdarahas Karrothu,89 hours 2 minutes,2531,63,1855
+496,7,B,Shriya Malladi,16 hours 6 minutes,1281,83,1113
+497,7,B,Sohana Vaddi,7 hours 40 minutes,382,75,742
+498,7,B,Srinadh Kakkirala,29 hours 40 minutes,2650,85,3023
+499,7,B,Thrinayanasamanvi Saripalli,13 hours 34 minutes,804,75,946
+500,7,B,Thushyanth Gottipati,5 hours 36 minutes,584,76,1008
+501,7,C,Abhiramvarma Jampana,20 hours 32 minutes,1272,79,1626
+502,7,C,Adhyansh Singh,46 hours 40 minutes,3053,79,2709
+503,7,C,Amyra Khandelwal,0 hours 59 minutes,45,69,15
+504,7,C,Anvi Sharma,3 hours 53 minutes,281,81,205
+505,7,C,Bruhathisree Balina,23 hours 52 minutes,2020,63,1355
+506,7,C,Chaitranaidu Nidra,1 hours 34 minutes,125,61,16
+507,7,C,Chandradivyan Bada,2 hours 36 minutes,113,80,47
+508,7,C,Damek sharma,10 hours 24 minutes,460,75,610
+509,7,C,Faheemah Fatma,41 hours 28 minutes,2717,85,3455
+510,7,C,Hisha Chakka,2 hours 36 minutes,204,63,111
+511,7,C,Hrian Kuramdas,2 hours 10 minutes,214,59,189
+512,7,C,Kanishka Kedia,4 hours 26 minutes,309,47,49
+513,7,C,Lahari Katragadda,9 hours 0 minutes,739,58,316
+514,7,C,Lalithasai Challa,2 hours 23 minutes,120,66,33
+515,7,C,M Sri Vikhyath,17 hours 48 minutes,1731,82,1683
+516,7,C,Nithyasri Boyana,0 hours 22 minutes,1,0,0
+517,7,C,Nushanth Killada,5 hours 22 minutes,607,72,542
+518,7,C,Reyaansh Agarwal,2 hours 48 minutes,255,90,307
+519,7,C,Ridvej Sirigirisetty,4 hours 55 minutes,465,65,155
+520,7,C,Samanvitha Yalla,13 hours 6 minutes,398,76,274
+521,7,C,Shaurya Pasari,4 hours 13 minutes,411,91,516
+522,7,C,Shrikareddy Chinthalapani,96 hours 35 minutes,5810,70,4088
+523,7,C,Sourrya Konda,27 hours 41 minutes,1286,64,1174
+524,7,C,Srivarnika Javvadi,9 hours 0 minutes,630,72,357
+525,7,C,Thushara Sattaru,14 hours 17 minutes,1056,71,1290
+526,7,C,Veekshita Vemulapalli,0 hours 0 minutes,0,0,0
+527,7,C,Venkatasamanvi Suddapalli,11 hours 9 minutes,1011,72,847
+528,7,C,Vishwakvarma Datla,0 hours 0 minutes,0,0,0
+529,7,D,Aarohi Beera,1 hours 26 minutes,82,74,27
+530,7,D,Aradhya Polaki,14 hours 29 minutes,803,73,626
+531,7,D,Aryan Bhupathi,2 hours 58 minutes,310,65,136
+532,7,D,Avni Naggireddy,1 hours 37 minutes,128,55,17
+533,7,D,Buddha Sivajee,10 hours 9 minutes,782,68,445
+534,7,D,Chandra Pusarla,0 hours 39 minutes,25,65,6
+535,7,D,Dheer Wadhwa,2 hours 8 minutes,201,68,172
+536,7,D,Gaganasamhita Mudunuri,20 hours 10 minutes,2030,51,1137
+537,7,D,Jairaj Nain,2 hours 54 minutes,137,70,67
+538,7,D,Kanav Karnani,14 hours 22 minutes,2033,74,1289
+539,7,D,Krishna Nemani,1 hours 32 minutes,152,64,53
+540,7,D,Namish Mogallapu,6 hours 22 minutes,717,93,1144
+541,7,D,Parnika Kantipudi,5 hours 37 minutes,581,67,451
+542,7,D,Puneetvandikreddy Goluguri,18 hours 2 minutes,1501,75,767
+543,7,D,Rajasagi Sreedarsh Varma,21 hours 40 minutes,1447,67,777
+544,7,D,Reyaansh Palepu,11 hours 4 minutes,650,72,772
+545,7,D,Saanvi Tummala,2 hours 2 minutes,120,56,58
+546,7,D,Sameekshavarma Dantuluri,11 hours 50 minutes,870,72,748
+547,7,D,Shreedhari Koyilada,6 hours 41 minutes,571,75,330
+548,7,D,Sohan Chidepudi,76 hours 56 minutes,3201,61,2858
+549,7,D,Srinandana Dattu,1 hours 11 minutes,23,86,4
+550,7,D,Srivarunika Dantuluri,15 hours 29 minutes,1392,61,547
+551,7,D,Tanvi Zarapala,34 hours 44 minutes,1778,73,1269
+552,7,D,Trishulinkumar Dev,37 hours 45 minutes,1479,69,1036
+553,7,D,Vihaanpal Marupilla,3 hours 16 minutes,573,70,550
+554,7,E,B V Siri Snigdha,25 hours 5 minutes,2196,85,2719
+555,7,E,Bhargavaram Yarapatineni,43 hours 31 minutes,3017,78,2523
+556,7,E,Dhruv Nekkanti,14 hours 19 minutes,1723,79,1625
+557,7,E,Divakala Ajay Ewan,1 hours 20 minutes,68,54,14
+558,7,E,Geethasukanya Beti,21 hours 32 minutes,1274,74,956
+559,7,E,Gopinaathnirmal Boppana,2 hours 11 minutes,157,72,47
+560,7,E,Hrithikadiya Jyothula,6 hours 15 minutes,378,70,277
+561,7,E,Jaiveer Maddineni,9 hours 39 minutes,853,73,989
+562,7,E,Jaya Akshara Sagiraju,34 hours 45 minutes,979,60,767
+563,7,E,Krtyaakruthi Garuda,14 hours 11 minutes,1565,75,1441
+564,7,E,Navya Nekkanti,9 hours 13 minutes,823,58,530
+565,7,E,Nihalvirinchi Vendrapu,8 hours 21 minutes,557,81,591
+566,7,E,Pragnareddy Sadhika,6 hours 10 minutes,246,80,363
+567,7,E,Pranvi Sri Kolli,2 hours 45 minutes,471,26,83
+568,7,E,Purvisunayana Malla,24 hours 9 minutes,1340,67,1085
+569,7,E,Rajvishwak Botu,6 hours 23 minutes,788,76,733
+570,7,E,Saiahankarthik Vangapandu,4 hours 21 minutes,590,77,656
+571,7,E,Sreenika Yarlagadda,22 hours 56 minutes,2237,83,2349
+572,7,E,Srisaisushant Grandhi,25 hours 43 minutes,258,55,161
+573,7,E,Vaishnavilochana Kavali,2 hours 13 minutes,75,80,31
+574,7,E,Veda Perla,13 hours 50 minutes,1198,80,973
+575,7,E,Viaanvarma Penumatsa,26 hours 6 minutes,2283,76,2095
+576,7,E,Vibha Satuluri,3 hours 22 minutes,340,82,205
+577,7,E,Vihaan Gudapati,37 hours 27 minutes,2337,89,3584
+578,7,E,Yuvan Dantuluri,1 hours 45 minutes,110,88,131
+579,8,A,Akshaya Sankalp,9 hours 43 minutes,830,68,669
+580,8,A,Bhumika Dumpala,1 hours 26 minutes,92,79,59
+581,8,A,Devvishnu Rajasagi,3 hours 10 minutes,228,59,102
+582,8,A,Dhyaan Arnav,7 hours 35 minutes,180,83,230
+583,8,A,Divita Bada,0 hours 43 minutes,13,70,2
+584,8,A,Himank Chowdary,1 hours 5 minutes,39,69,6
+585,8,A,Ishan Simhadri,8 hours 20 minutes,567,65,365
+586,8,A,Jaithraumesh Kamineni,6 hours 42 minutes,157,56,103
+587,8,A,Jayansh Kommana,1 hours 32 minutes,33,61,4
+588,8,A,Jayesh T,19 hours 9 minutes,2175,76,2061
+589,8,A,Kaira Manish,6 hours 31 minutes,379,58,153
+590,8,A,Krishna Kaushik,6 hours 59 minutes,331,79,293
+591,8,A,Krishna Vysyaraju,23 hours 41 minutes,1008,66,758
+592,8,A,Moksha Venkat,13 hours 41 minutes,675,59,452
+593,8,A,Saanvi G,3 hours 33 minutes,155,68,210
+594,8,A,Sakshi Sathi,2 hours 5 minutes,83,92,158
+595,8,A,Shanmukha Sai,1 hours 58 minutes,41,71,16
+596,8,A,Shreesiri Koyilada,4 hours 49 minutes,192,74,52
+597,8,A,Sri Vanshika,1 hours 18 minutes,71,61,112
+598,8,A,Srihith Nukala,17 hours 11 minutes,575,66,584
+599,8,A,Srilekha Majeti,7 hours 40 minutes,326,59,184
+600,8,A,Takshaksrimanishaan Dommeti,1 hours 18 minutes,44,79,8
+601,8,A,Tanishvarma Alluri,37 hours 0 minutes,2342,86,4124
+602,8,A,Thanusree Paladugu,2 hours 28 minutes,92,71,54
+603,8,A,Tithi Sharma,0 hours 28 minutes,25,64,3
+604,8,A,Unnathi Chapa,5 hours 51 minutes,413,78,562
+605,8,B,Aaharya Poosarla,4 hours 54 minutes,378,64,240
+606,8,B,Aanya Nekkanti,7 hours 46 minutes,297,67,132
+607,8,B,Aarka Sennar,2 hours 25 minutes,92,67,25
+608,8,B,Adidev Pujari,40 hours 25 minutes,873,93,1206
+609,8,B,Akshaya Donkada,1 hours 20 minutes,42,54,3
+610,8,B,Archita Katamareddi,2 hours 26 minutes,50,67,116
+611,8,B,Av Sai,5 hours 36 minutes,190,53,72
+612,8,B,Avika Varma,3 hours 0 minutes,74,81,41
+613,8,B,Chaitra L,4 hours 5 minutes,88,50,26
+614,8,B,Chanakya Abbineni,1 hours 6 minutes,60,80,84
+615,8,B,Dhanya Potluri,1 hours 59 minutes,79,77,50
+616,8,B,Gaurav Kalyanam,0 hours 34 minutes,23,83,5
+617,8,B,Geethika Tammineedi,4 hours 9 minutes,329,89,653
+618,8,B,Ishanvi Mikkineni,0 hours 22 minutes,2,50,0
+619,8,B,Khyati Chakravarthy,1 hours 32 minutes,33,91,13
+620,8,B,Krishnasaimanichadwick Gopalasetty,19 hours 13 minutes,1361,59,692
+621,8,B,Neel Zubin,1 hours 33 minutes,123,61,17
+622,8,B,Padma Nayana,9 hours 24 minutes,839,69,534
+623,8,B,Pradhyun Kalidindi,2 hours 0 minutes,126,48,16
+624,8,B,Riteshsarvan Mylapalli,27 hours 29 minutes,1460,86,2041
+625,8,B,Ruthwik Bachala,0 hours 34 minutes,20,88,4
+626,8,B,Sreshta Vantipalli,8 hours 42 minutes,496,86,715
+627,8,B,Srisai Varshini,15 hours 1 minutes,548,51,556
+628,8,B,Srisaisaanvi Kotagiri,6 hours 25 minutes,121,87,219
+629,8,B,Srivar Sai,2 hours 20 minutes,169,49,129
+630,8,B,Tenisha Pattipati,14 hours 13 minutes,976,95,1829
+631,8,B,Yashveer Sai,4 hours 22 minutes,803,36,157
+632,8,C,Aamuktha Dadi,13 hours 26 minutes,839,71,1109
+633,8,C,Ananda Shruthi,3 hours 10 minutes,164,67,49
+634,8,C,Dharshini M,17 hours 46 minutes,1022,88,1760
+635,8,C,Gia Jain,4 hours 48 minutes,162,71,460
+636,8,C,Hanilya Malla,0 hours 3 minutes,4,75,0
+637,8,C,Harshadha Shreesai,2 hours 28 minutes,138,44,36
+638,8,C,Jaikoushik Saragadam,25 hours 22 minutes,1437,70,1620
+639,8,C,Jathin M,20 hours 49 minutes,280,75,562
+640,8,C,Jitesh Mullapudi,15 hours 12 minutes,1357,79,1898
+641,8,C,Kushali Uppuluri,6 hours 58 minutes,368,75,694
+642,8,C,Lakshith Chowdary,41 hours 44 minutes,2900,98,6115
+643,8,C,Mural Eshanth Reddy,2 hours 8 minutes,137,39,14
+644,8,C,Naisha Mordani,7 hours 9 minutes,359,72,487
+645,8,C,Niranjan Pamidi,34 hours 20 minutes,3329,70,3829
+646,8,C,Saathvik Reddy,28 hours 13 minutes,1201,69,886
+647,8,C,Saiadarsh Kanakam,6 hours 58 minutes,342,59,363
+648,8,C,Saikruthi Grandhi,3 hours 35 minutes,123,41,10
+649,8,C,Sarada Shri,49 hours 29 minutes,2096,79,2921
+650,8,C,Sharan Maddila,0 hours 56 minutes,47,70,37
+651,8,C,Sri Paranavi Manasvitha,33 hours 48 minutes,1098,83,1584
+652,8,C,Tanishka Chichula,9 hours 35 minutes,471,56,301
+653,8,C,Varish Kolla,3 hours 22 minutes,134,62,254
+654,8,D,Aadhya Riana,1 hours 27 minutes,44,77,11
+655,8,D,Aadit Patchi,23 hours 53 minutes,1112,83,1966
+656,8,D,Aashna Akunoori,1 hours 18 minutes,93,73,27
+657,8,D,Anyukth Ram,4 hours 7 minutes,317,81,425
+658,8,D,Ashutosh Mallina,1 hours 16 minutes,43,77,12
+659,8,D,B Harshini,0 hours 51 minutes,27,56,5
+660,8,D,Deepayush Nadikoppu,18 hours 36 minutes,1629,85,2189
+661,8,D,Geetha Vysyaraju,1 hours 30 minutes,34,74,6
+662,8,D,Harika Sri,8 hours 47 minutes,663,42,110
+663,8,D,Kaavya Nidadavolu,18 hours 55 minutes,1345,85,2006
+664,8,D,Keyah Ijjapureddy,17 hours 24 minutes,885,63,942
+665,8,D,Lasha Madukuri,0 hours 58 minutes,34,75,6
+666,8,D,Nanditha Chintala,19 hours 3 minutes,1309,89,1736
+667,8,D,Preksha Khemka,0 hours 3 minutes,7,17,0
+668,8,D,Rohit Gadigattla,14 hours 15 minutes,1262,57,922
+669,8,D,Saarwari Bandaru,0 hours 48 minutes,11,70,1
+670,8,D,Saikeerthana Chetty,1 hours 17 minutes,60,58,122
+671,8,D,Sarmishtha Pemmadi,3 hours 4 minutes,67,59,59
+672,8,D,Savir Murkuri,16 hours 59 minutes,1417,70,1166
+673,8,D,Shaswat Daruka,0 hours 0 minutes,0,0,0
+674,8,D,Shaurya Trivedi,0 hours 0 minutes,0,0,0
+675,8,D,Shauryavenkata Tamminana,35 hours 24 minutes,2610,88,3469
+676,8,D,Siddharth Vadapalli,24 hours 46 minutes,883,77,1052
+677,8,D,Sritaneesh Regulavalasa,25 hours 34 minutes,1161,84,1926
+678,8,D,Sudiksha G,0 hours 43 minutes,0,0,0
+679,8,D,Veerainkairav Chenna,0 hours 16 minutes,8,71,0
+680,8,D,Venkata Gorav,2 hours 29 minutes,47,63,8
+681,8,D,Venkata Srikasi,7 hours 34 minutes,288,80,535
+682,9,A,Aarav Adapaka,4 hours 24 minutes,280,85,244
+683,9,A,Adisiva Sampath,5 hours 22 minutes,433,71,427
+684,9,A,Aikya Penmatsa,1 hours 42 minutes,123,50,35
+685,9,A,Ananya Satyam,5 hours 39 minutes,71,84,61
+686,9,A,Aneeshvenkat Sampathirao,11 hours 24 minutes,976,51,194
+687,9,A,Anshita Chettipilli,11 hours 5 minutes,504,76,474
+688,9,A,Aradhanavarma Pusapati,10 hours 16 minutes,169,82,63
+689,9,A,Bhavya Shree S,2 hours 5 minutes,165,52,30
+690,9,A,Dhruv Raviprolu,1 hours 59 minutes,145,84,106
+691,9,A,Eshwardas Yalla,0 hours 55 minutes,74,90,33
+692,9,A,Jeremiah Williamjohn,0 hours 47 minutes,73,54,16
+693,9,A,Joshitha Korrapati,3 hours 35 minutes,110,66,31
+694,9,A,Manomay Ranjith,0 hours 51 minutes,50,76,46
+695,9,A,Nithyasree Simhadri,10 hours 4 minutes,308,71,210
+696,9,A,Pavanisasha Srivatsavai,7 hours 38 minutes,610,65,517
+697,9,A,Saii Nithya Vanguru,1 hours 6 minutes,30,67,10
+698,9,A,Sakshara Golla,1 hours 51 minutes,192,76,125
+699,9,A,Shaik Zaara,1 hours 22 minutes,171,73,67
+700,9,A,Shaurya S,0 hours 33 minutes,24,55,2
+701,9,A,Siddharth Varma,2 hours 3 minutes,120,70,36
+702,9,A,Sreemansreekar Padala,2 hours 35 minutes,283,92,410
+703,9,A,sahasra suvvari,0 hours 0 minutes,0,0,0
+704,9,B,Ahlad Bhaskar,0 hours 38 minutes,39,26,4
+705,9,B,Akanksha Kondragunta,2 hours 26 minutes,124,75,43
+706,9,B,Arohi Datla,8 hours 10 minutes,506,79,752
+707,9,B,Aryaman Yenigalla,17 hours 32 minutes,447,61,206
+708,9,B,Hasita Venkata,0 hours 42 minutes,65,49,16
+709,9,B,Jairam Kondragunta,19 hours 34 minutes,1364,78,1728
+710,9,B,Kashvi Nainika,10 hours 57 minutes,386,85,636
+711,9,B,Kaushal Pativada,11 hours 23 minutes,584,76,641
+712,9,B,Khushal D,11 hours 34 minutes,1645,64,1250
+713,9,B,Madhup Anjan,0 hours 1 minutes,0,0,0
+714,9,B,Naga Sai,2 hours 12 minutes,208,84,291
+715,9,B,Neeharika Vundavilli,0 hours 2 minutes,0,0,0
+716,9,B,Rama Rao,38 hours 43 minutes,1211,86,1951
+717,9,B,Sairam Krishna,0 hours 8 minutes,20,100,12
+718,9,B,Satvik Varma,0 hours 34 minutes,77,43,3
+719,9,B,Srivathsava Burugupalli,7 hours 2 minutes,770,73,766
+720,9,B,Swasyaakshara Srisa,5 hours 39 minutes,667,72,342
+721,9,B,Tanush Kolli,0 hours 36 minutes,65,76,19
+722,9,B,Thanush Chintala,0 hours 43 minutes,93,83,80
+723,9,B,Venkatamihiravarma Datla,7 hours 26 minutes,305,74,336
+724,9,B,Venkatasai Anisha,21 hours 34 minutes,2092,85,2302
+725,9,B,Viswasrimanogna Nagavarapu,0 hours 0 minutes,0,0,0
+726,9,C,Aadya Polamarasetty,5 hours 10 minutes,467,78,317
+727,9,C,Arshi Kottu,3 hours 51 minutes,309,53,198
+728,9,C,Arth Ganrothu,9 hours 23 minutes,368,61,297
+729,9,C,Chinmaya Anush,11 hours 35 minutes,1147,75,1314
+730,9,C,Esha Juturu,7 hours 18 minutes,450,76,415
+731,9,C,Himal Sai,7 hours 34 minutes,528,67,142
+732,9,C,Lakshya Harsh,6 hours 0 minutes,603,81,683
+733,9,C,Manasvi Maradana,8 hours 49 minutes,611,72,651
+734,9,C,Mohammad Rehan,14 hours 4 minutes,238,64,112
+735,9,C,Moukthika Maradana,7 hours 55 minutes,728,59,653
+736,9,C,Nirnay Grandhi,6 hours 39 minutes,400,66,359
+737,9,C,Reshmanth Chava,1 hours 4 minutes,106,51,14
+738,9,C,Riaaishani Beedu,5 hours 5 minutes,184,56,50
+739,9,C,Shaik Salma,14 hours 25 minutes,944,72,1010
+740,9,C,Sregal Sanjeevi,9 hours 35 minutes,600,83,1058
+741,9,C,Srinishjaswanth Chenna,1 hours 15 minutes,46,66,6
+742,9,C,Venkata Sai Jashith Kumar Madireddy,5 hours 37 minutes,653,67,707
+743,9,C,Yuktha Naidu,15 hours 42 minutes,882,69,625
+744,9,D,Aadrishya C,31 hours 0 minutes,2052,75,1769
+745,9,D,Aarohi Alok,29 hours 7 minutes,1273,85,1673
+746,9,D,Aarshi Shaurya,17 hours 13 minutes,956,78,944
+747,9,D,Arjun Saikam,2 hours 59 minutes,290,77,268
+748,9,D,Atulith Prabhakar,14 hours 24 minutes,819,65,778
+749,9,D,Chaitanya Manadapati,11 hours 21 minutes,978,74,860
+750,9,D,Chaitanya Pragnesh,31 hours 55 minutes,1172,84,1282
+751,9,D,Dhanushkarthikeya Gutta,4 hours 58 minutes,456,62,261
+752,9,D,Eshita Sabbineni,0 hours 29 minutes,19,89,4
+753,9,D,Hanish Namala,11 hours 36 minutes,1133,70,1079
+754,9,D,Hasika Chapa,3 hours 32 minutes,264,76,145
+755,9,D,Kundana Alahari,6 hours 18 minutes,267,85,356
+756,9,D,Pratima Raj,2 hours 50 minutes,55,68,15
+757,9,D,Rithvik Varma,0 hours 0 minutes,0,0,0
+758,9,D,Saiakshita Kanneganti,0 hours 51 minutes,136,75,61
+759,9,D,Sarayu Nakka,29 hours 57 minutes,839,83,1169
+760,9,D,Sathvik Kalidindi,9 hours 42 minutes,1016,56,304
+761,9,D,Vaishnavi Burugupalli,0 hours 0 minutes,0,0,0
+762,9,D,Yekshita Mudunuri,0 hours 59 minutes,114,56,24
+763,10,A,Alla Kshethragna,19 hours 13 minutes,1033,83,1728
+764,10,A,Anish Kedia,0 hours 0 minutes,0,0,0
+765,10,A,Avani Somani,0 hours 28 minutes,8,75,2
+766,10,A,Charan Adithya,0 hours 0 minutes,0,0,0
+767,10,A,Drita Anaparthi,1 hours 8 minutes,4,75,2
+768,10,A,Geethikahasini Bonam,0 hours 0 minutes,0,0,0
+769,10,A,Gurunandha Krishna,0 hours 55 minutes,54,62,16
+770,10,A,Hiral Parakh,0 hours 0 minutes,0,0,0
+771,10,A,Kirtana Kappagantula,5 hours 31 minutes,349,77,441
+772,10,A,Manini Vavilapalli,1 hours 6 minutes,63,56,22
+773,10,A,Nishanth Addala,0 hours 0 minutes,0,0,0
+774,10,A,Sagiraju Sreshta,0 hours 0 minutes,0,0,0
+775,10,A,Saisrikar Korlam,17 hours 6 minutes,95,64,24
+776,10,A,Sandesh Ved,1 hours 14 minutes,55,53,4
+777,10,A,Shriyans Chandra,0 hours 44 minutes,64,91,16
+778,10,A,Siddarth S,0 hours 0 minutes,0,0,0
+779,10,A,Sreshta Kondragunta,0 hours 0 minutes,0,0,0
+780,10,A,Srisudha Magapu,0 hours 0 minutes,0,0,0
+781,10,A,Surya Varma,1 hours 39 minutes,63,69,15
+782,10,A,Thanush Lingamaneni,12 hours 41 minutes,28,30,0
+783,10,A,Thanveenaidu Gorle,0 hours 0 minutes,0,0,0
+784,10,A,Thanvi Krishna,4 hours 1 minutes,176,89,220
+785,10,A,Theekshana Phani,0 hours 0 minutes,0,0,0
+786,10,A,Vaishnavi Patchava,3 hours 18 minutes,69,70,30
+787,10,A,Vennelareddy Koyya,0 hours 0 minutes,0,0,0
+788,10,B,Advait Patra,6 hours 37 minutes,396,88,644
+789,10,B,Akshara Akshara,0 hours 20 minutes,55,70,30
+790,10,B,Aman Surapaneni,0 hours 43 minutes,49,70,44
+791,10,B,Anvitha Polaki,0 hours 0 minutes,0,0,0
+792,10,B,Bindu Polineni,60 hours 6 minutes,1283,45,299
+793,10,B,Chaitrika Isampalli,7 hours 23 minutes,287,75,304
+794,10,B,Divishi Anaparthi,0 hours 45 minutes,32,91,16
+795,10,B,Ishitha G,4 hours 10 minutes,154,89,264
+796,10,B,Janvi J,1 hours 8 minutes,81,55,18
+797,10,B,Jaswant Sanapala,3 hours 59 minutes,225,73,117
+798,10,B,Jaya Krishna,22 hours 13 minutes,480,65,570
+799,10,B,Mokshasreekrishna Gujjula,2 hours 18 minutes,113,85,100
+800,10,B,Monavinayanithisha Pandranki,3 hours 37 minutes,221,87,242
+801,10,B,Rohanvarmadatla Datla,4 hours 28 minutes,322,70,244
+802,10,B,Saanvi Penmatsa,4 hours 32 minutes,238,69,209
+803,10,B,Saatvika Pamidi,2 hours 46 minutes,130,60,27
+804,10,B,Sahasra Saripella,1 hours 19 minutes,58,55,8
+805,10,B,Sai Jagumantri,0 hours 48 minutes,41,59,6
+806,10,B,Saicharan Madipalli,14 hours 18 minutes,339,79,204
+807,10,B,Sanika Swapnil,5 hours 44 minutes,204,77,151
+808,10,B,Tanusree Chintala,5 hours 44 minutes,160,72,108
+809,10,B,Vaibhavi Patchava,4 hours 5 minutes,214,73,113
+810,10,C,Achal Kedia,0 hours 0 minutes,0,0,0
+811,10,C,Amritharaju Gorinta,0 hours 11 minutes,10,89,2
+812,10,C,Apurna Snigdha,0 hours 0 minutes,0,0,0
+813,10,C,Charan Pattipati,5 hours 5 minutes,102,72,56
+814,10,C,Govinda Utkarsh,0 hours 2 minutes,6,67,1
+815,10,C,Greshma Shaik,0 hours 4 minutes,2,0,0
+816,10,C,Nandam Shriyans,0 hours 15 minutes,11,90,4
+817,10,C,Pragnya Cherukuri,0 hours 13 minutes,8,29,0
+818,10,C,Raunak Kamasani,0 hours 0 minutes,0,0,0
+819,10,C,Sahasra Penmetsa,0 hours 0 minutes,0,0,0
+820,10,C,Saitejas Bachina,0 hours 0 minutes,0,0,0
+821,10,C,Sampath Saicharan,44 hours 11 minutes,2270,68,2130
+822,10,C,Sashrikapadmavati Yeleti,0 hours 19 minutes,12,100,8
+823,10,C,Satya Satviki Allu,0 hours 0 minutes,0,0,0
+824,10,C,Shauryatej Arikathota,0 hours 25 minutes,8,12,0
+825,10,C,Shreshta C,0 hours 19 minutes,3,33,0
+826,10,C,Tanishka Tammineedi,0 hours 7 minutes,23,70,18
+827,10,C,Vajradhar Naggireddy,0 hours 0 minutes,0,0,0
+828,10,C,Vedang Bikkina,2 hours 39 minutes,20,65,3
+829,10,C,Venkatasatyaabhinav Sundarapu,0 hours 2 minutes,4,0,0
+830,10,C,Vishwakvarma Dantuluri,2 hours 59 minutes,68,82,87
