@@ -181,15 +181,15 @@ def load_school_data(school_id):
     
     base_path = next((p for p in possible_paths if os.path.exists(p)), None)
     
-    data = {"Asset": {}, "Mindspark Math": {}, "Mindspark English": {}, "Mindspark Science": {}}
+    data = {"ASSET": {}, "Mindspark Math": {}, "Mindspark English": {}, "Mindspark Science": {}}
     if not base_path: return data
     
-    # Load Asset Data
-    asset_dir = os.path.join(base_path, "Asset")
-    if os.path.exists(asset_dir):
-        for f in os.listdir(asset_dir):
+    # Load ASSET Data
+    ASSET_dir = os.path.join(base_path, "ASSET")
+    if os.path.exists(ASSET_dir):
+        for f in os.listdir(ASSET_dir):
             if f.endswith(".csv"):
-                data["Asset"][f] = pd.read_csv(os.path.join(asset_dir, f))
+                data["ASSET"][f] = pd.read_csv(os.path.join(ASSET_dir, f))
 
     # Load Mindspark Data
     for product in ["mindspark math", "mindspark english", "mindspark science"]:
@@ -216,7 +216,7 @@ school_data = load_school_data(school_id)
 
 # --- DEFINE TABS DYNAMICALLY ---
 tabs_list = ["Home"]
-if school_data["Asset"]: tabs_list.append("Asset")
+if school_data["ASSET"]: tabs_list.append("ASSET")
 if school_id in SCHOOL_REPORTS: tabs_list.append("Strategic Summary")
 tabs_list.append("Case Study")  # Available for both schools
 if school_data["Mindspark Math"]: tabs_list.append("Mindspark Math")
@@ -224,7 +224,7 @@ if school_data["Mindspark English"]: tabs_list.append("Mindspark English")
 if school_data["Mindspark Science"]: tabs_list.append("Mindspark Science")
 
 selected_tabs = st.tabs(tabs_list)
-# Create a map for robust indexing: e.g., {"Asset": 1, "Mindspark Math": 2, ...}
+# Create a map for robust indexing: e.g., {"ASSET": 1, "Mindspark Math": 2, ...}
 tab_map = {name.split()[-1]: i for i, name in enumerate(tabs_list)}
 # Manual overrides for multi-word subject names
 if "Math" in tab_map: tab_map["Mindspark Math"] = tab_map["Math"]
@@ -252,7 +252,7 @@ def clean_benchmarking_df(df):
         else:
             school_cols.append(f"Benchmark_{len(school_cols)}")
     
-    # Try to map based on common structures seen in Asset CSVs
+    # Try to map based on common structures seen in ASSET CSVs
     # Col 0: Class, Col 1: Empty or School, Col 2: Group, Col 3: National
     temp_df = df.copy()
     if temp_df.shape[1] >= 4:
@@ -339,74 +339,72 @@ with selected_tabs[0]:
     st.write("---")
     
     # Growth Narrative
-    col_growth, col_radar = st.columns([2, 1])
-    with col_growth:
-        st.subheader("The Silver Oaks Growth Story")
-        
-        # 1. Math Cohort Progress
-        yoy_math = get_file("Asset", "View Data (Same Class YoY) -math")
-        if yoy_math is not None:
-            yoy_clean = yoy_math.copy()
-            yoy_clean.columns = ['Cohort'] + list(yoy_clean.columns[1:])
-            yoy_clean = yoy_clean.dropna(subset=['Cohort'])
-            fig_yoy = px.line(yoy_clean, x='Cohort', y=list(yoy_clean.columns[1:]), 
-                             title="Sustained Cohort Progress (Asset Math)",
+    st.subheader("The Silver Oaks Growth Story")
+    
+    # 1. Math Cohort Progress
+    yoy_math = get_file("ASSET", "View Data (Same Class YoY) -math")
+    if yoy_math is not None:
+        yoy_clean = yoy_math.copy()
+        yoy_clean.columns = ['Cohort'] + list(yoy_clean.columns[1:])
+        yoy_clean = yoy_clean.dropna(subset=['Cohort'])
+        fig_yoy = px.line(yoy_clean, x='Cohort', y=list(yoy_clean.columns[1:]), 
+                         title="Sustained Cohort Progress (ASSET Math)",
+                         markers=True, color_discrete_sequence=CHART_COLORS,
+                         labels={'value': 'Performance', 'variable': 'Academic Year'})
+        st.plotly_chart(fig_yoy, width="stretch")
+
+    # 2. English Cohort Progress
+    yoy_eng = get_file("ASSET", "View Data (Same Class YoY) -english")
+    if yoy_eng is not None:
+        yoy_eng_clean = yoy_eng.copy()
+        yoy_eng_clean.columns = ['Cohort'] + list(yoy_eng_clean.columns[1:])
+        yoy_eng_clean = yoy_eng_clean.dropna(subset=['Cohort'])
+        fig_yoy_eng = px.line(yoy_eng_clean, x='Cohort', y=list(yoy_eng_clean.columns[1:]), 
+                             title="Sustained Cohort Progress (ASSET English)",
                              markers=True, color_discrete_sequence=CHART_COLORS,
                              labels={'value': 'Performance', 'variable': 'Academic Year'})
-            st.plotly_chart(fig_yoy, width="stretch")
-
-        # 2. English Cohort Progress
-        yoy_eng = get_file("Asset", "View Data (Same Class YoY) -english")
-        if yoy_eng is not None:
-            yoy_eng_clean = yoy_eng.copy()
-            yoy_eng_clean.columns = ['Cohort'] + list(yoy_eng_clean.columns[1:])
-            yoy_eng_clean = yoy_eng_clean.dropna(subset=['Cohort'])
-            fig_yoy_eng = px.line(yoy_eng_clean, x='Cohort', y=list(yoy_eng_clean.columns[1:]), 
-                                 title="Sustained Cohort Progress (Asset English)",
-                                 markers=True, color_discrete_sequence=CHART_COLORS,
-                                 labels={'value': 'Performance', 'variable': 'Academic Year'})
-            st.plotly_chart(fig_yoy_eng, width="stretch")
-            
-        st.caption("These charts track the same group of students over time, demonstrating sustained academic excellence across subjects.")
-        st.markdown("""
-        **Institutional Resilience:** The steady upward trajectory in both Math and English proves that 
-        Silver Oaks is successfully building long-term academic foundations.
-        """)
+        st.plotly_chart(fig_yoy_eng, width="stretch")
         
-        st.write("---")
-        st.subheader("Institutional Engagement Trends")
-        # Global Usage ROI (from 'View Underlying Data')
-        usage_dfs = []
-        for prod in ["Mindspark Math", "Mindspark English", "Mindspark Science"]:
-            u_df = get_file(prod, "View Underlying Data")
-            if u_df is not None:
-                usage_dfs.append(u_df)
+    # 3. Science Cohort Progress
+    yoy_sci = get_file("ASSET", "View Data (Same Class YoY) -science")
+    if yoy_sci is not None:
+        yoy_sci_clean = yoy_sci.copy()
+        yoy_sci_clean.columns = ['Cohort'] + list(yoy_sci_clean.columns[1:])
+        yoy_sci_clean = yoy_sci_clean.dropna(subset=['Cohort'])
+        fig_yoy_sci = px.line(yoy_sci_clean, x='Cohort', y=list(yoy_sci_clean.columns[1:]), 
+                             title="Sustained Cohort Progress (ASSET Science)",
+                             markers=True, color_discrete_sequence=CHART_COLORS,
+                             labels={'value': 'Performance', 'variable': 'Academic Year'})
+        st.plotly_chart(fig_yoy_sci, width="stretch")
         
-        if usage_dfs:
-            try:
-                all_usage = pd.concat(usage_dfs)
-                # Group by Month and average the usage
-                monthly_usage = all_usage.groupby('Month')['Per Student Monthly Usage (Mins)'].mean().reset_index()
-                # Sort by month (simple heuristic for fiscal year)
-                fig_usage = px.line(monthly_usage, x='Month', y='Per Student Monthly Usage (Mins)', 
-                                   title="Operational Impact: Monthly Utility (Student Engagement)",
-                                   markers=True, color_discrete_sequence=[COLOR_PRIMARY])
-                st.plotly_chart(fig_usage, width="stretch")
-                st.caption("Data aggregated across all active Mindspark product lines.")
-            except: pass
+    st.caption("These charts track the same group of students over time, demonstrating sustained academic excellence across subjects.")
+    st.markdown("""
+    **Institutional Resilience:** The steady upward trajectory in Math, English, and Science proves that 
+    Silver Oaks is successfully building long-term academic foundations.
+    """)
     
-    with col_radar:
-        st.subheader("Science Growth")
-        yoy_sci = get_file("Asset", "View Data (Same Class YoY) -science")
-        if yoy_sci is not None:
-            yoy_sci_clean = yoy_sci.copy()
-            yoy_sci_clean.columns = ['Cohort'] + list(yoy_sci_clean.columns[1:])
-            yoy_sci_clean = yoy_sci_clean.dropna(subset=['Cohort'])
-            fig_yoy_sci = px.line(yoy_sci_clean, x='Cohort', y=list(yoy_sci_clean.columns[1:]), 
-                                 title="Sustained Cohort Progress (Asset Science)",
-                                 markers=True, color_discrete_sequence=CHART_COLORS,
-                                 labels={'value': 'Performance', 'variable': 'Academic Year'})
-            st.plotly_chart(fig_yoy_sci, width="stretch")
+    st.write("---")
+    
+    st.subheader("Institutional Engagement Trends")
+    # Global Usage ROI (from 'View Underlying Data')
+    usage_dfs = []
+    for prod in ["Mindspark Math", "Mindspark English", "Mindspark Science"]:
+        u_df = get_file(prod, "View Underlying Data")
+        if u_df is not None:
+            usage_dfs.append(u_df)
+    
+    if usage_dfs:
+        try:
+            all_usage = pd.concat(usage_dfs)
+            # Group by Month and average the usage
+            monthly_usage = all_usage.groupby('Month')['Per Student Monthly Usage (Mins)'].mean().reset_index()
+            # Sort by month (simple heuristic for fiscal year)
+            fig_usage = px.line(monthly_usage, x='Month', y='Per Student Monthly Usage (Mins)', 
+                               title="Operational Impact: Monthly Utility",
+                               markers=True, color_discrete_sequence=[COLOR_PRIMARY])
+            st.plotly_chart(fig_usage, width="stretch")
+            st.caption("Data aggregated across all active Mindspark product lines.")
+        except: pass
 
     st.write("---")
     
@@ -423,7 +421,7 @@ with selected_tabs[0]:
             **Key Strategic Outcomes:**
             - **Reinforced Learning**: High accuracy at scale proves that students are internalising concepts, not just guessing.
             - **Productive Persistence**: The volume of sparkies and questions attempted indicates a high level of intrinsic motivation and engagement.
-            - **Predictive Excellence**: High accuracy in Mindspark is a leading indicator for the sustained YoY growth seen in Asset scores.
+            - **Predictive Excellence**: High accuracy in Mindspark is a leading indicator for the sustained YoY growth seen in ASSET scores.
             """)
         with c2_home:
             try:
@@ -439,14 +437,14 @@ with selected_tabs[0]:
                 st.info("Student metrics are being aggregated.")
 
 # --- ASSET TAB ---
-if "Asset" in tab_map:
-    with selected_tabs[tab_map["Asset"]]:
-        st.header("Asset: Institutional Excellence & Skill Mastery")
+if "ASSET" in tab_map:
+    with selected_tabs[tab_map["ASSET"]]:
+        st.header("ASSET: Institutional Excellence & Skill Mastery")
         
         # Key Highlights
         st.markdown(f"""
         <div style="background-color: {COLOR_LIGHT_SECONDARY}; padding: 15px; border-radius: 8px; border-left: 4px solid {COLOR_PRIMARY}; margin: 10px 0;">
-            <h4 style="color: {COLOR_SECONDARY}; margin: 0;">Asset Program Highlights</h4>
+            <h4 style="color: {COLOR_SECONDARY}; margin: 0;">ASSET Program Highlights</h4>
             <ul style="color: {COLOR_TEXT}; margin: 10px 0 0 0;">
                 <li><strong>Skill Mastery:</strong> Comprehensive assessment across Math, English, and Science</li>
                 <li><strong>Longitudinal Tracking:</strong> Year-over-year progress monitoring</li>
@@ -457,7 +455,7 @@ if "Asset" in tab_map:
         """, unsafe_allow_html=True)
         
         # Benchmarking Analysis
-        bench_df = get_file("Asset", "Benchmarking Snapshot")
+        bench_df = get_file("ASSET", "Benchmarking Snapshot")
         cleaned_bench = clean_benchmarking_df(bench_df)
         
         if cleaned_bench is not None:
@@ -482,7 +480,7 @@ if "Asset" in tab_map:
         # Collect all class options across all skill files for a master dropdown
         all_s_classes = set()
         for s in ["math", "english", "science"]:
-            sf = get_file("Asset", f"Skill Performance Summer 2025 [S] Snapshot-{s}")
+            sf = get_file("ASSET", f"Skill Performance Summer 2025 [S] Snapshot-{s}")
             if sf is not None:
                 all_s_classes.update(sf['CLASS'].unique())
         
@@ -497,7 +495,7 @@ if "Asset" in tab_map:
                 col_skill_1, col_skill_2 = st.columns(2)
                 
                 with col_skill_1:
-                    skill_file = get_file("Asset", f"Skill Performance Summer 2025 [S] Snapshot-{subject.lower()}")
+                    skill_file = get_file("ASSET", f"Skill Performance Summer 2025 [S] Snapshot-{subject.lower()}")
                     if skill_file is not None:
                         try:
                             skill_f = skill_file[skill_file['CLASS'] == sel_skill_class]
@@ -523,11 +521,11 @@ if "Asset" in tab_map:
                         except: pass
 
                 with col_skill_2:
-                    skill_yoy = get_file("Asset", f"Year-over-Year Skill Comparison-{subject.lower()}")
+                    skill_yoy = get_file("ASSET", f"Year-over-Year Skill Comparison-{subject.lower()}")
                     if skill_yoy is not None:
                         try:
                             # Filter for the relevant class if it's in the YoY file columns or rows
-                            # Usually Asset YoY is class-agnostic or row-wise.
+                            # Usually ASSET YoY is class-agnostic or row-wise.
                             fig_skill_yoy = px.line(skill_yoy, x=skill_yoy.columns[0], y=skill_yoy.columns[1:],
                                                   title=f"{subject} Skill Trajectory (Longitudinal)",
                                                   markers=True, color_discrete_sequence=CHART_COLORS)
@@ -535,9 +533,9 @@ if "Asset" in tab_map:
                         except: pass
                 
                 # --- ANNUAL SCORE PROGRESSION ---
-                prog_file = get_file("Asset", f"Year-over-Year Comparison-{subject.lower()}")
+                prog_file = get_file("ASSET", f"Year-over-Year Comparison-{subject.lower()}")
                 if prog_file is None and subject == "Math":
-                    prog_file = get_file("Asset", "Year-over-Year Comparison-maths.csv")
+                    prog_file = get_file("ASSET", "Year-over-Year Comparison-maths.csv")
                 
                 if prog_file is not None:
                     try:
@@ -547,7 +545,7 @@ if "Asset" in tab_map:
                         st.plotly_chart(fig_prog, width="stretch")
                     except: pass
         else:
-            st.warning("Asset skill data is being initialized.")
+            st.warning("ASSET skill data is being initialized.")
 
 # --- CASE STUDY TAB ---
 if "Case Study" in tab_map:
@@ -926,11 +924,16 @@ if "Case Study" in tab_map:
             rel_dirs = []
             if target_prod:
                 rel_dirs.append(os.path.join("report pdf", target_prod))
+                rel_dirs.append(os.path.join("reports pdf", target_prod))
             rel_dirs.extend([
                 os.path.join("report pdf", "mindspark math"),
                 os.path.join("report pdf", "mindspark english"),
                 os.path.join("report pdf", "mindspark science"),
-                "report pdf"
+                "report pdf",
+                os.path.join("reports pdf", "mindspark math"),
+                os.path.join("reports pdf", "mindspark english"),
+                os.path.join("reports pdf", "mindspark science"),
+                "reports pdf"
             ])
             
             for base in possible_base_paths:
@@ -1562,9 +1565,9 @@ if "Summary" in tab_map:
     with selected_tabs[tab_map["Summary"]]:
         st.header("Strategic Executive Summary")
         
-        exec_ms_tab, exec_asset_tab = st.tabs(["Mindspark", "ASSET"])
+        exec_ms_tab, exec_ASSET_tab = st.tabs(["Mindspark", "ASSET"])
         
-        with exec_asset_tab:
+        with exec_ASSET_tab:
             st.markdown("### ASSET Performance & Impact Summary")
             st.write("Diagnostic insights from the ASSET benchmark assessments, identifying core strengths and critical learning gaps across classes to drive targeted interventions.")
             
@@ -1572,9 +1575,9 @@ if "Summary" in tab_map:
                 st.markdown(f"#### {subj.capitalize()} Insights")
                 
                 # Year-over-Year Skill Comparison (Top/Bottom Skills & Visualization)
-                skill_comp_df = get_file("Asset", f"Year-over-Year Skill Comparison-{subj}")
+                skill_comp_df = get_file("ASSET", f"Year-over-Year Skill Comparison-{subj}")
                 if skill_comp_df is None and subj == "math":
-                    skill_comp_df = get_file("Asset", "Year-over-Year Skill Comparison-maths")
+                    skill_comp_df = get_file("ASSET", "Year-over-Year Skill Comparison-maths")
                     
                 if skill_comp_df is not None and not skill_comp_df.empty and len(skill_comp_df.columns) >= 5:
                     classes = sorted([c for c in skill_comp_df['CLASS'].unique() if pd.notna(c)])
@@ -1632,7 +1635,7 @@ if "Summary" in tab_map:
                 st.write("") # Spacer
                 
                 # YoY Performance
-                yoy_df = get_file("Asset", f"YoY Performance Summer 2025 [S] Snapshot-{subj}")
+                yoy_df = get_file("ASSET", f"YoY Performance Summer 2025 [S] Snapshot-{subj}")
                 if yoy_df is not None and not yoy_df.empty:
                     st.markdown(f"**{subj.capitalize()} Year-on-Year Growth**")
                     yoy_clean = yoy_df.copy()
