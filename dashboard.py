@@ -339,72 +339,73 @@ with selected_tabs[0]:
     st.write("---")
     
     # Growth Narrative
-    st.subheader("The Silver Oaks Growth Story")
-    
-    # 1. Math Cohort Progress
-    yoy_math = get_file("ASSET", "View Data (Same Class YoY) -math")
-    if yoy_math is not None:
-        yoy_clean = yoy_math.copy()
-        yoy_clean.columns = ['Cohort'] + list(yoy_clean.columns[1:])
-        yoy_clean = yoy_clean.dropna(subset=['Cohort'])
-        fig_yoy = px.line(yoy_clean, x='Cohort', y=list(yoy_clean.columns[1:]), 
-                         title="Sustained Cohort Progress (ASSET Math)",
-                         markers=True, color_discrete_sequence=CHART_COLORS,
-                         labels={'value': 'Performance', 'variable': 'Academic Year'})
-        st.plotly_chart(fig_yoy, width="stretch")
+    col_growth, col_radar = st.columns([2, 1])
+    with col_growth:
+        st.subheader("The Silver Oaks Growth Story")
+        
+        # 1. Math Cohort Progress
+        yoy_math = get_file("ASSET", "View Data (Same Class YoY) -math")
+        if yoy_math is not None:
+            yoy_clean = yoy_math.copy()
+            yoy_clean.columns = ['Cohort'] + list(yoy_clean.columns[1:])
+            yoy_clean = yoy_clean.dropna(subset=['Cohort'])
+            fig_yoy = px.line(yoy_clean, x='Cohort', y=list(yoy_clean.columns[1:]), 
+                             title="Sustained Cohort Progress (ASSET Math)",
+                             markers=True, color_discrete_sequence=CHART_COLORS,
+                             labels={'value': 'Performance', 'variable': 'Academic Year'})
+            st.plotly_chart(fig_yoy, width="stretch")
 
-    # 2. English Cohort Progress
-    yoy_eng = get_file("ASSET", "View Data (Same Class YoY) -english")
-    if yoy_eng is not None:
-        yoy_eng_clean = yoy_eng.copy()
-        yoy_eng_clean.columns = ['Cohort'] + list(yoy_eng_clean.columns[1:])
-        yoy_eng_clean = yoy_eng_clean.dropna(subset=['Cohort'])
-        fig_yoy_eng = px.line(yoy_eng_clean, x='Cohort', y=list(yoy_eng_clean.columns[1:]), 
-                             title="Sustained Cohort Progress (ASSET English)",
-                             markers=True, color_discrete_sequence=CHART_COLORS,
-                             labels={'value': 'Performance', 'variable': 'Academic Year'})
-        st.plotly_chart(fig_yoy_eng, width="stretch")
+        # 2. English Cohort Progress
+        yoy_eng = get_file("ASSET", "View Data (Same Class YoY) -english")
+        if yoy_eng is not None:
+            yoy_eng_clean = yoy_eng.copy()
+            yoy_eng_clean.columns = ['Cohort'] + list(yoy_eng_clean.columns[1:])
+            yoy_eng_clean = yoy_eng_clean.dropna(subset=['Cohort'])
+            fig_yoy_eng = px.line(yoy_eng_clean, x='Cohort', y=list(yoy_eng_clean.columns[1:]), 
+                                 title="Sustained Cohort Progress (ASSET English)",
+                                 markers=True, color_discrete_sequence=CHART_COLORS,
+                                 labels={'value': 'Performance', 'variable': 'Academic Year'})
+            st.plotly_chart(fig_yoy_eng, width="stretch")
+            
+        # 3. Science Cohort Progress
+        yoy_sci = get_file("ASSET", "View Data (Same Class YoY) -science")
+        if yoy_sci is not None:
+            yoy_sci_clean = yoy_sci.copy()
+            yoy_sci_clean.columns = ['Cohort'] + list(yoy_sci_clean.columns[1:])
+            yoy_sci_clean = yoy_sci_clean.dropna(subset=['Cohort'])
+            fig_yoy_sci = px.line(yoy_sci_clean, x='Cohort', y=list(yoy_sci_clean.columns[1:]), 
+                                 title="Sustained Cohort Progress (ASSET Science)",
+                                 markers=True, color_discrete_sequence=CHART_COLORS,
+                                 labels={'value': 'Performance', 'variable': 'Academic Year'})
+            st.plotly_chart(fig_yoy_sci, width="stretch")
+            
+        st.caption("These charts track the same group of students over time, demonstrating sustained academic excellence across subjects.")
+        st.markdown("""
+        **Institutional Resilience:** The steady upward trajectory in Math, English, and Science proves that 
+        Silver Oaks is successfully building long-term academic foundations.
+        """)
         
-    # 3. Science Cohort Progress
-    yoy_sci = get_file("ASSET", "View Data (Same Class YoY) -science")
-    if yoy_sci is not None:
-        yoy_sci_clean = yoy_sci.copy()
-        yoy_sci_clean.columns = ['Cohort'] + list(yoy_sci_clean.columns[1:])
-        yoy_sci_clean = yoy_sci_clean.dropna(subset=['Cohort'])
-        fig_yoy_sci = px.line(yoy_sci_clean, x='Cohort', y=list(yoy_sci_clean.columns[1:]), 
-                             title="Sustained Cohort Progress (ASSET Science)",
-                             markers=True, color_discrete_sequence=CHART_COLORS,
-                             labels={'value': 'Performance', 'variable': 'Academic Year'})
-        st.plotly_chart(fig_yoy_sci, width="stretch")
+    with col_radar:
+        st.subheader("Institutional Engagement Trends")
+        # Global Usage ROI (from 'View Underlying Data')
+        usage_dfs = []
+        for prod in ["Mindspark Math", "Mindspark English", "Mindspark Science"]:
+            u_df = get_file(prod, "View Underlying Data")
+            if u_df is not None:
+                usage_dfs.append(u_df)
         
-    st.caption("These charts track the same group of students over time, demonstrating sustained academic excellence across subjects.")
-    st.markdown("""
-    **Institutional Resilience:** The steady upward trajectory in Math, English, and Science proves that 
-    Silver Oaks is successfully building long-term academic foundations.
-    """)
-    
-    st.write("---")
-    
-    st.subheader("Institutional Engagement Trends")
-    # Global Usage ROI (from 'View Underlying Data')
-    usage_dfs = []
-    for prod in ["Mindspark Math", "Mindspark English", "Mindspark Science"]:
-        u_df = get_file(prod, "View Underlying Data")
-        if u_df is not None:
-            usage_dfs.append(u_df)
-    
-    if usage_dfs:
-        try:
-            all_usage = pd.concat(usage_dfs)
-            # Group by Month and average the usage
-            monthly_usage = all_usage.groupby('Month')['Per Student Monthly Usage (Mins)'].mean().reset_index()
-            # Sort by month (simple heuristic for fiscal year)
-            fig_usage = px.line(monthly_usage, x='Month', y='Per Student Monthly Usage (Mins)', 
-                               title="Operational Impact: Monthly Utility",
-                               markers=True, color_discrete_sequence=[COLOR_PRIMARY])
-            st.plotly_chart(fig_usage, width="stretch")
-            st.caption("Data aggregated across all active Mindspark product lines.")
-        except: pass
+        if usage_dfs:
+            try:
+                all_usage = pd.concat(usage_dfs)
+                # Group by Month and average the usage
+                monthly_usage = all_usage.groupby('Month')['Per Student Monthly Usage (Mins)'].mean().reset_index()
+                # Sort by month (simple heuristic for fiscal year)
+                fig_usage = px.line(monthly_usage, x='Month', y='Per Student Monthly Usage (Mins)', 
+                                   title="Operational Impact: Monthly Utility",
+                                   markers=True, color_discrete_sequence=[COLOR_PRIMARY])
+                st.plotly_chart(fig_usage, width="stretch")
+                st.caption("Data aggregated across all active Mindspark product lines.")
+            except: pass
 
     st.write("---")
     
