@@ -330,7 +330,7 @@ with selected_tabs[0]:
     with col1:
         st.markdown(f'<div class="metric-card"><div class="metric-value">{int(final_q):,}</div><div class="metric-label">Digital Practice Volume</div></div>', unsafe_allow_html=True)
     with col2:
-        st.markdown(f'<div class="metric-card"><div class="metric-value">{avg_gain:.1f}%</div><div class="metric-label">Net Learning Gain</div></div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="metric-card"><div class="metric-value">{avg_gain:.1f}%</div><div class="metric-label">Average Topic Improvement</div></div>', unsafe_allow_html=True)
     with col3:
         st.markdown(f'<div class="metric-card"><div class="metric-value">{int(final_rem):,}</div><div class="metric-label">Remedial Interventions</div></div>', unsafe_allow_html=True)
     with col4:
@@ -351,7 +351,8 @@ with selected_tabs[0]:
             yoy_clean = yoy_clean.dropna(subset=['Cohort'])
             fig_yoy = px.line(yoy_clean, x='Cohort', y=list(yoy_clean.columns[1:]), 
                              title="Sustained Cohort Progress (Asset Math)",
-                             markers=True, color_discrete_sequence=CHART_COLORS)
+                             markers=True, color_discrete_sequence=CHART_COLORS,
+                             labels={'value': 'Performance', 'variable': 'Academic Year'})
             st.plotly_chart(fig_yoy, width="stretch")
 
         # 2. English Cohort Progress
@@ -362,7 +363,8 @@ with selected_tabs[0]:
             yoy_eng_clean = yoy_eng_clean.dropna(subset=['Cohort'])
             fig_yoy_eng = px.line(yoy_eng_clean, x='Cohort', y=list(yoy_eng_clean.columns[1:]), 
                                  title="Sustained Cohort Progress (Asset English)",
-                                 markers=True, color_discrete_sequence=CHART_COLORS)
+                                 markers=True, color_discrete_sequence=CHART_COLORS,
+                                 labels={'value': 'Performance', 'variable': 'Academic Year'})
             st.plotly_chart(fig_yoy_eng, width="stretch")
             
         st.caption("These charts track the same group of students over time, demonstrating sustained academic excellence across subjects.")
@@ -394,17 +396,17 @@ with selected_tabs[0]:
             except: pass
     
     with col_radar:
-        st.subheader("Academic Excellence Index")
-        # Holistic Radar for Decision Makers
-        impact_categories = ["Math Mastery", "English Mastery", "Science Mastery", "Partner Value", "Rigor"]
-        # Standardized values for visualization
-        impact_values = [avg_gain * 1.5, 82, 78, 95, 88] 
-        fig_radar = go.Figure(data=go.Scatterpolar(r=impact_values, theta=impact_categories, fill='toself', fillcolor='rgba(30, 58, 138, 0.3)', line_color=COLOR_PRIMARY))
-        fig_radar.update_layout(polar=dict(radialaxis=dict(visible=True, range=[0, 100])), showlegend=False, margin=dict(l=40, r=40, t=40, b=40))
-        st.plotly_chart(fig_radar, width="stretch")
-        st.markdown("""
-        **360° Impact:** A balanced radar indicates holistic institutional strength across all product lines.
-        """)
+        st.subheader("Science Growth")
+        yoy_sci = get_file("Asset", "View Data (Same Class YoY) -science")
+        if yoy_sci is not None:
+            yoy_sci_clean = yoy_sci.copy()
+            yoy_sci_clean.columns = ['Cohort'] + list(yoy_sci_clean.columns[1:])
+            yoy_sci_clean = yoy_sci_clean.dropna(subset=['Cohort'])
+            fig_yoy_sci = px.line(yoy_sci_clean, x='Cohort', y=list(yoy_sci_clean.columns[1:]), 
+                                 title="Sustained Cohort Progress (Asset Science)",
+                                 markers=True, color_discrete_sequence=CHART_COLORS,
+                                 labels={'value': 'Performance', 'variable': 'Academic Year'})
+            st.plotly_chart(fig_yoy_sci, width="stretch")
 
     st.write("---")
     
@@ -611,9 +613,15 @@ if "Case Study" in tab_map:
             ]
             
             pdf_path = None
+            rel_dirs = [
+                os.path.join("report pdf", "mindspark math"),
+                os.path.join("report pdf", "mindspark english"),
+                os.path.join("report pdf", "mindspark science"),
+                "report pdf"
+            ]
             for base in possible_base_paths:
-                for prod in ["mindspark math", "mindspark english", "mindspark science"]:
-                    test_path = os.path.join(base, "report pdf", prod, pdf_filename)
+                for rel in rel_dirs:
+                    test_path = os.path.join(base, rel, pdf_filename)
                     if os.path.exists(test_path):
                         pdf_path = test_path
                         break
@@ -878,17 +886,34 @@ if "Case Study" in tab_map:
                 
         elif school_id == "5018164":
             case_studies = {
-                "Grade 3 - Aarav Bandaru": "grade3",
-                "Grade 4 - Krithik": "grade4",
-                "Grade 5 - Moksh Tiraj Naidu Pudi": "grade5",
-                "Grade 6 - Vedant Patra": "grade6",
-                "Grade 7 - Jayant Srisai Vedulla": "grade7"
+                "Grade 3 - Aarav Bandaru (Math)": "grade3_math",
+                "Grade 3 - Aarav Bandaru (Science)": "grade3_sci",
+                "Grade 3 - Shaivy Varma Sagi (English)": "grade3_eng",
+                "Grade 4 - Krithik (Science)": "grade4_sci",
+                "Grade 4 - Poorvaj Maddula (English)": "grade4_eng",
+                "Grade 5 - Moksh Tiraj Naidu Pudi (Math)": "grade5_math",
+                "Grade 5 - Moksh Tiraj Naidu Pudi (Science)": "grade5_sci",
+                "Grade 5 - Gowri Nandhan Danabonu (English)": "grade5_eng",
+                "Grade 6 - Vedant Patra (Math)": "grade6_math",
+                "Grade 6 - Vedant Patra (Science)": "grade6_sci",
+                "Grade 6 - Poshya Hariharan Degapudi (English)": "grade6_eng",
+                "Grade 7 - Jayant Srisai Vedulla (Math)": "grade7_math",
+                "Grade 7 - Jayant Srisai Vedulla (Science)": "grade7_sci",
+                "Grade 7 - Kashvita Sai Gulipalli (English)": "grade7_eng"
             }
             selected_case = st.selectbox("Select Student Case Study", list(case_studies.keys()))
             case_study_key = case_studies[selected_case]
             
             # --- Option to view the PDF report ---
-            student_name = selected_case.split(" - ")[1] if " - " in selected_case else selected_case
+            student_raw = selected_case.split(" - ")[1] if " - " in selected_case else selected_case
+            student_name = student_raw.split(" (")[0].strip()
+            
+            target_prod = None
+            if " (" in student_raw:
+                subj = student_raw.split(" (")[1].replace(")", "").strip().lower()
+                if subj in ["math", "english", "science"]:
+                    target_prod = f"mindspark {subj}"
+                    
             pdf_filename = f"Summary_Report_{student_name}.pdf"
             
             possible_base_paths = [
@@ -898,9 +923,19 @@ if "Case Study" in tab_map:
             ]
             
             pdf_path = None
+            rel_dirs = []
+            if target_prod:
+                rel_dirs.append(os.path.join("report pdf", target_prod))
+            rel_dirs.extend([
+                os.path.join("report pdf", "mindspark math"),
+                os.path.join("report pdf", "mindspark english"),
+                os.path.join("report pdf", "mindspark science"),
+                "report pdf"
+            ])
+            
             for base in possible_base_paths:
-                for prod in ["mindspark math", "mindspark english", "mindspark science"]:
-                    test_path = os.path.join(base, "report pdf", prod, pdf_filename)
+                for rel in rel_dirs:
+                    test_path = os.path.join(base, rel, pdf_filename)
                     if os.path.exists(test_path):
                         pdf_path = test_path
                         break
@@ -916,8 +951,46 @@ if "Case Study" in tab_map:
                     st.markdown(pdf_display, unsafe_allow_html=True)
                     st.download_button(label="Download PDF Report", data=pdf_bytes, file_name=pdf_filename, mime="application/pdf")
             
-            # Grade 3 - Aarav Bandaru
-            if case_study_key == "grade3":
+            # Grade 3 - Aarav Bandaru (Math)
+            if case_study_key == "grade3_math":
+                st.markdown("## Data-Driven Remediation & Gap Closure")
+                st.markdown("**Student Profile:** Aarav Bandaru, Class 3-Section Algeria | **Platform:** Ei Mindspark")
+                st.markdown("### 1. Executive Summary: High-Volume Mastery and Academic Excellence")
+                st.write("The data for Aarav Bandaru reflects an exceptionally high-performing student with a strong commitment to mathematical proficiency. Since June 01, 2025, Aarav has utilized the platform for **86 hours and 3 minutes**, solving a total of **4,545 questions**. With an overall **accuracy of 87%** and nearly **7,000 'Sparkies'** earned, Aarav demonstrates consistent mastery across 32 activated topics.")
+                
+                st.markdown("### 2. High-Impact Remediation & Knowledge Gap Closure")
+                st.write("A significant highlight of Aarav’s profile is the **absence of remediation data**.")
+                st.write("- **First-Time Proficiency:** Maintaining an 87% accuracy rate across thousands of questions suggests that Aarav consistently grasps complex Grade 3 concepts on the first attempt.")
+                st.write("- **Avoidance of Struggle Thresholds:** Because no remediation was triggered, Aarav has successfully navigated the adaptive logic of the platform without encountering the persistent misconceptions that necessitate intervention.")
+                
+                st.markdown("### 3. Quantitative Growth: Baseline vs. Endline")
+                st.write("Aarav’s topic summary provides clear evidence of 'filling the gap,' often moving from initial uncertainty to perfect endline scores.")
+                
+                growth_data_3m = pd.DataFrame({
+                    'Topic': ['Division of whole numbers', 'Multiplication of whole numbers - 2', 'Subtraction up to 999 (without regrouping)', 'Fractions - Equivalence & Comparison - 2', 'Addition and subtraction of numbers up to 20'],
+                    'Baseline (%)': [82, 75, 75, 67, 50],
+                    'Endline (%)': [100, 100, 100, 100, 83],
+                    'Accuracy (%)': [92, 88, 85, 92, 87]
+                })
+                col_table, col_chart = st.columns([1, 1])
+                with col_table:
+                    st.dataframe(growth_data_3m, use_container_width=True)
+                with col_chart:
+                    fig_growth_3m = px.bar(growth_data_3m, x='Topic', y=['Baseline (%)', 'Endline (%)'], barmode='group', title="Growth Trajectory", color_discrete_map={'Baseline (%)': COLOR_SECONDARY, 'Endline (%)': COLOR_PRIMARY})
+                    fig_growth_3m.update_layout(xaxis_tickangle=-45, height=300)
+                    st.plotly_chart(fig_growth_3m, use_container_width=True)
+                
+                st.markdown("### 4. Advanced Engagement & Learning Efficiency")
+                st.write("Aarav is not only mastering the standard curriculum but is also actively pushed into more challenging material.")
+                st.write("- **Higher Level Time:** Aarav has dedicated **5 hours and 28 minutes** specifically to advanced, 'Higher Level' content, indicating that the platform successfully identifies when he is ready for greater challenges.")
+                st.write("- **Exceptional Topic Accuracy:** Aarav achieved near-perfect accuracy in several foundational topics, such as **Even and odd numbers - 2 (98%)**, **Subtraction up to 99 (97%)**, and **Addition up to 999 (95%)**.")
+                st.write("- **Persistence in Complex Operations:** He spent over **5 hours** each on **Multiplication (5h 17m)**, **Word Problems (5h 50m)**, and **Estimation (5h 3m)**, demonstrating a willingness to engage deeply with time-intensive concepts.")
+                
+                st.markdown("### 5. Conclusion")
+                st.write("Aarav’s case study illustrates a 'High-Mastery' profile. By starting with varied baselines and achieving a consistent **87% overall accuracy** and numerous **100% endline scores**, he proves that the platform effectively bridges even small knowledge gaps. The complete lack of remediation, combined with significant time spent on **Higher Level content**, confirms that Aarav is using Mindspark not just for gap closure, but for accelerated learning and academic excellence.")
+
+            # Grade 3 - Aarav Bandaru (Science)
+            elif case_study_key == "grade3_sci":
                 st.markdown("## Data-Driven Remediation & Gap Closure")
                 st.markdown("**Student Profile:** Aarav Bandaru, Class 3-Section Algeria | **Platform:** Ei Mindspark")
                 st.markdown("### 1. Executive Summary: High Engagement in Environmental Science")
@@ -955,8 +1028,46 @@ if "Case Study" in tab_map:
                 st.markdown("### 5. Conclusion")
                 st.write("Aarav’s case study illustrates a student who efficiently bridges the gap from zero initial knowledge to high proficiency in science. By maintaining a **73% accuracy rate** and spending significant time on **Higher Level content**, he demonstrates that the platform's adaptive logic is successfully challenging him beyond the basics. The **100% clearance rate** in 6 out of 7 recorded remediation categories confirms that his foundational knowledge gaps are being systematically identified and filled.")
 
-            # Grade 4 - Krithik
-            elif case_study_key == "grade4":
+            # Grade 3 - Shaivy Varma Sagi (English)
+            elif case_study_key == "grade3_eng":
+                st.markdown("## Case Study: English Literacy Foundations & Engagement")
+                st.markdown("**Student Profile:** Shaivy Varma Sagi, Class 3-Section Algeria | **Platform:** Ei Mindspark")
+                st.markdown("### 1. Executive Summary: Balanced Development in Core Literacy")
+                st.write("The data for Shaivy Varma Sagi reflects a steady engagement with foundational English literacy, totaling **17 hours and 4 minutes of usage** since June 2025. With **987 questions solved** and an overall **accuracy of 63%**, the student is building a balanced foundation across grammar, vocabulary, and receptive skills.")
+                
+                st.markdown("### 2. High-Impact Learning & Knowledge Gap Identification")
+                st.write("Shaivy’s profile demonstrates consistent performance across the four primary pillars of language acquisition, with a slight strength in structural rules.")
+                st.write("- **Grammatical Proficiency:** Shaivy shows the strongest performance in **Grammar**, achieving an accuracy of **67%** over 419 questions.")
+                st.write("- **Lexical Growth:** The student maintains a steady **61% accuracy** in **Vocabulary**, spending over 3 hours (3h 27m) expanding their word bank.")
+                st.write("- **Receptive Skills:** The data identifies consistent, though slightly lower, performance in **Listening (58% accuracy)** and **Reading (56% accuracy)**. These areas represent the current 'Knowledge Gaps' where adaptive support can further strengthen comprehension and processing speed.")
+                
+                st.markdown("### 3. Quantitative Proficiency: Topic Performance")
+                st.write("Shaivy has distributed effort across all activated literacy topics, ensuring a well-rounded approach to language learning.")
+                growth_data_3e = pd.DataFrame({
+                    'Topic': ['Grammar', 'Vocabulary', 'Listening', 'Reading'],
+                    'Questions Solved': [419, 318, 108, 142],
+                    'Accuracy (%)': [67, 61, 58, 56],
+                    'Time Spent': ['3h 54m', '3h 27m', '2h 26m', '2h 21m']
+                })
+                col_table, col_chart = st.columns([1, 1])
+                with col_table:
+                    st.dataframe(growth_data_3e, use_container_width=True)
+                with col_chart:
+                    fig_growth_3e = px.bar(growth_data_3e, x='Topic', y='Accuracy (%)', title="Topic Accuracy", color_discrete_sequence=[COLOR_PRIMARY])
+                    fig_growth_3e.update_layout(xaxis_tickangle=-45, height=300)
+                    st.plotly_chart(fig_growth_3e, use_container_width=True)
+                
+                st.markdown("### 4. Learning Efficiency & Persistence")
+                st.write("Shaivy’s learning style is characterized by a 'balanced-effort' approach into foundational language elements.")
+                st.write("- **Sustained Engagement:** Shaivy has spent significant time on both **Grammar (3h 54m)** and **Vocabulary (3h 27m)**, indicating a focused attempt to master the structural and descriptive components of English.")
+                st.write("- **Comprehension Effort:** Spending over **2 hours each** on **Reading** and **Listening** shows a persistent effort to engage with and interpret spoken and written texts.")
+                st.write("- **Active Solving Rate:** Solving nearly **1,000 questions** in approximately 17 hours indicates a brisk and healthy pace of interaction with the platform's adaptive content.")
+                
+                st.markdown("### 5. Conclusion")
+                st.write("Shaivy Varma Sagi’s case study illustrates a 'Consistent Progressor' profile. By achieving over **60% accuracy** in Grammar and Vocabulary, the student is successfully filling gaps in the technical mechanics of the language. While Reading and Listening currently show slightly lower accuracy, the consistent time investment across all categories suggests that the platform's adaptive logic is successfully challenging Shaivy at an appropriate level to build comprehensive literacy.")
+
+            # Grade 4 - Krithik (Science)
+            elif case_study_key == "grade4_sci":
                 st.markdown("## Data-Driven Remediation & Gap Closure")
                 st.markdown("**Student Profile:** Krithik, Class 4-Section India | **Platform:** Ei Mindspark")
                 st.markdown("### 1. Executive Summary: Focused Engagement in Physics and Biology")
@@ -991,8 +1102,83 @@ if "Case Study" in tab_map:
                 st.markdown("### 5. Conclusion")
                 st.write("Krithik’s case study illustrates a student who is beginning to build mastery in the 'India' section curriculum. By turning **0% baselines** into consistent **50%+ accuracy** in major topics like **Plant Structure** and **Force**, he demonstrates that the platform's adaptive logic is successfully identifying his learning gaps. The **100% clearance rate** in his remediation instances confirms that as new gaps appear, they are being resolved immediately, preventing the accumulation of misconceptions.")
 
-            # Grade 5 - Moksh Tiraj Naidu Pudi
-            elif case_study_key == "grade5":
+            # Grade 4 - Poorvaj Maddula (English)
+            elif case_study_key == "grade4_eng":
+                st.markdown("## Case Study: English Literacy Foundations & Engagement")
+                st.markdown("**Student Profile:** Poorvaj Maddula, Class 4-Section India | **Platform:** Ei Mindspark")
+                st.markdown("### 1. Executive Summary: Literacy Development through Targeted Practice")
+                st.write("The data for Poorvaj Maddula reflects an initial engagement with English literacy modules, totaling **9 hours and 36 minutes of usage** since June 2025. With **416 questions solved** and an overall **accuracy of 53%**, the student is actively exploring the four pillars of language acquisition: Grammar, Vocabulary, Reading, and Listening.")
+                
+                st.markdown("### 2. High-Impact Learning & Knowledge Gap Identification")
+                st.write("Poorvaj’s profile demonstrates a clear distinction between his technical language skills and his receptive processing skills.")
+                st.write("- **Grammatical Proficiency:** Poorvaj shows his strongest performance in **Grammar**, achieving an accuracy of **63%** over 161 questions.")
+                st.write("- **Lexical Growth:** He maintains a steady **58% accuracy** in **Vocabulary**, spending nearly 2 hours (1h 57m) building his word bank.")
+                st.write("- **Receptive Challenges:** The data identifies significant 'Knowledge Gaps' in **Reading (30% accuracy)** and **Listening (41% accuracy)**. These areas represent the most critical opportunities for focused intervention and remediation to ensure overall literacy growth.")
+                
+                st.markdown("### 3. Quantitative Proficiency: Topic Performance")
+                st.write("Poorvaj has distributed his efforts relatively evenly across the activated literacy topics to build a well-rounded foundation.")
+                growth_data_4e = pd.DataFrame({
+                    'Topic': ['Grammar', 'Vocabulary', 'Listening', 'Reading'],
+                    'Questions Solved': [161, 130, 49, 76],
+                    'Accuracy (%)': [63, 58, 41, 30],
+                    'Time Spent': ['1h 58m', '1h 57m', '47m', '1h 39m']
+                })
+                col_table4, col_chart4 = st.columns([1, 1])
+                with col_table4:
+                    st.dataframe(growth_data_4e, use_container_width=True)
+                with col_chart4:
+                    fig_growth_4e = px.bar(growth_data_4e, x='Topic', y='Accuracy (%)', title="Topic Accuracy", color_discrete_sequence=[COLOR_PRIMARY])
+                    fig_growth_4e.update_layout(xaxis_tickangle=-45, height=300)
+                    st.plotly_chart(fig_growth_4e, use_container_width=True)
+                
+                st.markdown("### 4. Learning Efficiency & Persistence")
+                st.write("Poorvaj’s learning style is characterized by a 'deep-dive' approach into structural language elements.")
+                st.write("- **Balanced Effort:** He has spent almost identical amounts of time on **Grammar (1h 58m)** and **Vocabulary (1h 57m)**, indicating a systematic attempt to master the building blocks of the English language.")
+                st.write("- **Focus Areas:** While his accuracy in Reading is currently his lowest, the **1 hour and 39 minutes** spent on this topic shows a persistent effort to engage with complex texts.")
+                st.write("- **Engagement Volume:** Solving over **400 questions** in under 10 hours suggests a brisk pace of interaction with the platform's adaptive content.")
+                
+                st.markdown("### 5. Conclusion")
+                st.write("Poorvaj Maddula’s case study illustrates a 'Structural Learner' profile. By achieving over **60% accuracy** in Grammar and nearly **60%** in Vocabulary, he is successfully filling gaps in the technical aspects of English. The significant gaps identified in **Reading and Listening** suggest that the platform's adaptive logic is correctly identifying his struggle thresholds. Moving forward, the goal will be to leverage his strong grammatical foundation to improve his comprehension and receptive accuracy, turning these challenges into measurable literacy gains.")
+
+            # Grade 5 - Moksh Tiraj Naidu Pudi (Math)
+            elif case_study_key == "grade5_math":
+                st.markdown("## Data-Driven Remediation & Gap Closure")
+                st.markdown("**Student Profile:** Moksh Tiraj Naidu Pudi, Class 5-Section Argentina | **Platform:** Ei Mindspark")
+                st.markdown("### 1. Executive Summary: High-Efficiency Mastery and Broad Engagement")
+                st.write("The data for Moksh Tiraj Naidu Pudi reflects a high-performing and prolific learner. Since June 01, 2025, the student has utilized the platform for **53 hours and 55 minutes**. With an overall **accuracy of 78%** across **2,895 questions solved**, Moksh demonstrates strong conceptual grasp across 32 activated topics. His profile is characterized by extremely high efficiency, requiring only **10 minutes of remediation** despite the high volume of work.")
+                
+                st.markdown("### 2. High-Impact Remediation & Knowledge Gap Closure")
+                st.write("A standout feature of Moksh’s profile is his ability to maintain high performance without recurring conceptual blocks.")
+                st.write("- **Exceptional Independent Learning:** Despite solving nearly 3,000 questions, the system triggered only **10 minutes of remediation time**.")
+                st.write("- **Minimal Struggle Thresholds:** The **absence of a detailed remediation summary** suggests that Moksh either clears struggle points immediately or rarely triggers them, indicating that his 'Knowledge Gaps' are bridged almost instantly through standard adaptive feedback.")
+                
+                st.markdown("### 3. Quantitative Growth: Baseline vs. Endline")
+                st.write("Moksh’s topic summary provides concrete evidence of 'filling the gap,' moving from moderate initial understanding to near-perfect proficiency in core Grade 5 areas.")
+                growth_data_5m = pd.DataFrame({
+                    'Topic': ['Decimals- Fundamentals - 2', 'Estimation and rounding - 1', 'Fractions - basic concepts', 'Pre-algebra reasoning - 1', 'Decimals- Fundamentals'],
+                    'Baseline (%)': [67, 42, 46, 100, 100],
+                    'Endline (%)': [100, 79, 54, 89, 100],
+                    'Accuracy (%)': [77, 71, 73, 86, 87]
+                })
+                col_table5, col_chart5 = st.columns([1, 1])
+                with col_table5:
+                    st.dataframe(growth_data_5m, use_container_width=True)
+                with col_chart5:
+                    fig_growth_5m = px.bar(growth_data_5m, x='Topic', y=['Baseline (%)', 'Endline (%)'], barmode='group', title="Growth Trajectory", color_discrete_map={'Baseline (%)': COLOR_SECONDARY, 'Endline (%)': COLOR_PRIMARY})
+                    fig_growth_5m.update_layout(xaxis_tickangle=-45, height=300)
+                    st.plotly_chart(fig_growth_5m, use_container_width=True)
+                
+                st.markdown("### 4. Learning Efficiency & Strategic Practice")
+                st.write("Moksh's learning style is defined by high accuracy in spatial and algebraic reasoning, as well as a significant investment in foundational operations.")
+                st.write("- **Algebraic Proficiency:** He demonstrated strong performance in **Patterns and Pre-algebra reasoning**, maintaining accuracies between **83% and 88%** across multiple modules.")
+                st.write("- **Persistence in Foundations:** Moksh dedicated **4 hours and 23 minutes** to 'Operations on large numbers' and **4 hours and 26 minutes** to 'Fractions,' solving a combined **664 questions** in these areas alone.")
+                st.write("- **Domain Excellence:** He achieved near-perfect accuracy in **Numbers up to 999 (95%)** and strong results in spatial topics like **Symmetry (88%)** and **Shapes and space (85%)**.")
+                
+                st.markdown("### 5. Conclusion")
+                st.write("Moksh Tiraj Naidu Pudi’s case study illustrates a 'High-Volume, High-Accuracy' profile. By turning a **42% baseline** in 'Estimation and rounding' into a **79% endline** and reaching **100% mastery** in multiple decimal modules, he proves that the platform’s adaptive logic effectively consolidates his learning. The negligible remediation time of **10 minutes** serves as the strongest evidence of his high learning efficiency, confirming that the majority of his **53+ hours** on the platform were spent on active progress and higher-level engagement rather than corrective loops.")
+
+            # Grade 5 - Moksh Tiraj Naidu Pudi (Science)
+            elif case_study_key == "grade5_sci":
                 st.markdown("## Data-Driven Remediation & Gap Closure")
                 st.markdown("**Student Profile:** Moksh Tiraj Naidu Pudi, Class 5-Section Argentina | **Platform:** Ei Mindspark")
                 st.markdown("### 1. Executive Summary: High-Efficiency Mastery")
@@ -1023,8 +1209,85 @@ if "Case Study" in tab_map:
                 st.markdown("### 5. Conclusion")
                 st.write("Moksh’s case study illustrates a 'Mastery-at-Entry' profile. By starting with a **0% baseline** and achieving a **78% accuracy** without requiring a single remediation instance, he proves that his existing knowledge was effectively consolidated by the platform. The high accuracy and lack of remediation suggest that for this student, the platform serves as a tool for validation and reinforcement of excellence in environmental science.")
 
-            # Grade 6 - Vedant Patra
-            elif case_study_key == "grade6":
+            # Grade 5 - Gowri Nandhan Danabonu (English)
+            elif case_study_key == "grade5_eng":
+                st.markdown("## Case Study: English Literacy Foundations & Engagement")
+                st.markdown("**Student Profile:** Gowri Nandhan Danabonu, Class 5-Section Brazil | **Platform:** Ei Mindspark")
+                st.markdown("### 1. Executive Summary: High-Volume Literacy Practice")
+                st.write("The data for Gowri Nandhan Danabonu reflects a highly active engagement with English literacy modules, totaling **11 hours and 13 minutes of usage** since June 2025. During this period, the student solved a significant volume of **1,333 questions** with an overall **accuracy of 60%**. Gowri's learning journey covers the four essential components of language acquisition: Grammar, Vocabulary, Reading, and Listening.")
+                
+                st.markdown("### 2. High-Impact Learning & Knowledge Gap Identification")
+                st.write("Gowri’s profile indicates a strong grasp of the structural and lexical rules of English, while highlighting challenges in receptive processing.")
+                st.write("- **Grammatical Proficiency:** Gowri shows the strongest performance in **Grammar**, achieving an accuracy of **69%** over 509 questions.")
+                st.write("- **Lexical Growth:** The student maintains a solid **62% accuracy** in **Vocabulary**, having solved 464 questions in this category.")
+                st.write("- **Receptive Challenges:** The data identifies notable 'Knowledge Gaps' in **Listening (44% accuracy)** and **Reading (46% accuracy)**. These scores suggest that while Gowri understands the building blocks of the language, applying them to comprehension tasks remains a key area for growth.")
+                
+                st.markdown("### 3. Quantitative Proficiency: Topic Performance")
+                st.write("Gowri has distributed effort across all activated literacy topics, with a balanced focus on building a technical foundation.")
+                growth_data_5e = pd.DataFrame({
+                    'Topic': ['Grammar', 'Vocabulary', 'Reading', 'Listening'],
+                    'Questions Solved': [509, 464, 213, 147],
+                    'Accuracy (%)': [69, 62, 46, 44],
+                    'Time Spent': ['2h 48m', '2h 29m', '1h 5m', '35m']
+                })
+                col_table5, col_chart5 = st.columns([1, 1])
+                with col_table5:
+                    st.dataframe(growth_data_5e, use_container_width=True)
+                with col_chart5:
+                    fig_growth_5e = px.bar(growth_data_5e, x='Topic', y='Accuracy (%)', title="Topic Accuracy", color_discrete_sequence=[COLOR_PRIMARY])
+                    fig_growth_5e.update_layout(xaxis_tickangle=-45, height=300)
+                    st.plotly_chart(fig_growth_5e, use_container_width=True)
+                
+                st.markdown("### 4. Learning Efficiency & Persistence")
+                st.write("Gowri’s learning style is characterized by a very high pace and a focus on structural elements.")
+                st.write("- **Structural Focus:** Gowri has spent over **5 hours combined** on **Grammar** and **Vocabulary**, solving nearly **1,000 questions** in these two areas alone.")
+                st.write("- **Rapid Processing:** Solving **1,333 questions** in just over **11 hours** indicates a very fast response rate, which may contribute to the lower accuracy seen in complex comprehension tasks like Reading and Listening.")
+                st.write("- **Comprehension Practice:** Despite lower accuracy, Gowri has engaged with **360 questions** in **Reading** and **Listening**, showing a persistent effort to improve receptive skills.")
+                
+                st.markdown("### 5. Conclusion")
+                st.write("Gowri Nandhan Danabonu’s case study illustrates a 'Technical Builder' profile. By achieving nearly **70% accuracy** in Grammar and over **60%** in Vocabulary, the student is successfully filling gaps in the mechanics of the English language. The identified gaps in **Reading and Listening** suggest that the platform's adaptive logic is correctly highlighting where deeper comprehension and slower, more deliberate processing are required. The objective for future sessions should be to leverage this strong technical base to improve accuracy in reading and listening contexts.")
+
+            # Grade 6 - Vedant Patra (Math)
+            elif case_study_key == "grade6_math":
+                st.markdown("## Data-Driven Remediation & Gap Closure")
+                st.markdown("**Student Profile:** Vedant Patra, Class 6-Section Austria | **Platform:** Ei Mindspark")
+                st.markdown("### 1. Executive Summary: High-Volume Mastery and Precision")
+                st.write("The data for Vedant Patra reflects an exceptionally high-performing and efficient learner. Since June 01, 2025, Vedant has utilized the platform for **54 hours and 17 minutes**, solving a total of **2,464 questions**. With an overall **accuracy of 86%** and **4,544 'Sparkies'** earned, he demonstrates consistent mastery across 24 activated topics. His profile is defined by 'First-Time Right' performance, requiring **zero minutes of remediation** despite the high volume of complex Grade 6 mathematical content.")
+                
+                st.markdown("### 2. High-Impact Remediation & Knowledge Gap Closure")
+                st.write("A standout feature of Vedant’s profile is his ability to maintain high performance without triggering corrective intervention loops.")
+                st.write("- **Independent Learning Excellence:** Despite solving nearly 2,500 questions, the system triggered **0 hours and 0 minutes of remediation time**.")
+                st.write("- **Absence of Conceptual Blocks:** The **lack of a remediation summary** indicates that Vedant consistently stays above the 'struggle threshold' that necessitates targeted intervention.")
+                st.write("- **Efficiency:** He successfully bridges knowledge gaps through the platform's standard adaptive feedback without needing specialized corrective instances.")
+                
+                st.markdown("### 3. Quantitative Growth: Baseline vs. Endline")
+                st.write("Vedant’s topic summary provides concrete evidence of 'filling the gap,' maintaining or achieving perfect proficiency in several core modules.")
+                growth_data_6m = pd.DataFrame({
+                    'Topic': ['Large Numbers', 'Introduction to Fractions', 'Point, Lines and Planes - 1', 'Decimals - Fundamentals', 'Area and Perimeter - 1'],
+                    'Baseline (%)': [100, 100, 100, 78, 75],
+                    'Endline (%)': [100, 100, 100, 78, 73],
+                    'Accuracy (%)': [88, 89, 84, 90, 86]
+                })
+                col_table6, col_chart6 = st.columns([1, 1])
+                with col_table6:
+                    st.dataframe(growth_data_6m, use_container_width=True)
+                with col_chart6:
+                    fig_growth_6m = px.bar(growth_data_6m, x='Topic', y=['Baseline (%)', 'Endline (%)'], barmode='group', title="Growth Trajectory", color_discrete_map={'Baseline (%)': COLOR_SECONDARY, 'Endline (%)': COLOR_PRIMARY})
+                    fig_growth_6m.update_layout(xaxis_tickangle=-45, height=300)
+                    st.plotly_chart(fig_growth_6m, use_container_width=True)
+                
+                st.markdown("### 4. Learning Efficiency & Strategic Practice")
+                st.write("Vedant's learning style is characterized by high accuracy in complex procedural and logical tasks.")
+                st.write("- **Procedural Accuracy:** He achieved a remarkable **90% accuracy** in 'Decimals - Fundamentals,' solving **396 questions** to reach 100% topic completion.")
+                st.write("- **Persistence in Large-Scale Topics:** Vedant dedicated **2 hours and 55 minutes** to 'Ratio and Proportion' and **2 hours and 28 minutes** to 'Large Numbers,' solving a combined **498 questions** in these areas alone.")
+                st.write("- **Geometric Mastery:** He successfully completed **243 questions** in 'Shapes and space - 1' with an **88% accuracy** and maintained a **100% accuracy** in 'Bar Graphs - 1'.")
+                st.write("- **Numerical Fluency:** He demonstrated high proficiency in **Roman Numerals (94%)** and **Properties of whole numbers (93%)**.")
+                
+                st.markdown("### 5. Conclusion")
+                st.write("Vedant Patra’s case study illustrates a 'High-Efficiency' profile. By maintaining an **86% overall accuracy** and completing multiple complex modules with **100% proficiency** (Endline), he proves that the platform effectively consolidates his learning. The fact that he solved over **2,400 questions** with **zero remediation time** serves as the strongest evidence of his high learning efficiency, confirming that he is successfully using the platform to validate and extend his mathematical excellence in Class 6.")
+
+            # Grade 6 - Vedant Patra (Science)
+            elif case_study_key == "grade6_sci":
                 st.markdown("## Data-Driven Remediation & Gap Closure")
                 st.markdown("**Student Profile:** Vedant Patra, Class 6-Section Austria | **Platform:** Ei Mindspark")
                 st.markdown("### 1. Executive Summary: Consistent Mastery Across Science Domains")
@@ -1063,8 +1326,85 @@ if "Case Study" in tab_map:
                 st.markdown("### 5. Conclusion")
                 st.write("Vedant’s case study illustrates a 'High-Growth' profile where the platform acts as a catalyst for rapid mastery. By turning **0% baselines** into a consistent **80% overall accuracy**, he proves that the platform's adaptive logic effectively identifies and fills initial knowledge voids. His 100% clearance rate in foundational remediation instances (excluding pre/post test assessments) confirms that his conceptual gaps are being filled in real-time, allowing him to move on to advanced higher-level content.")
 
-            # Grade 7 - Jayant Srisai Vedulla
-            elif case_study_key == "grade7":
+            # Grade 6 - Poshya Hariharan Degapudi (English)
+            elif case_study_key == "grade6_eng":
+                st.markdown("## Case Study: English Literacy Foundations & Engagement")
+                st.markdown("**Student Profile:** Poshya Hariharan Degapudi, Class 6-Section Austria | **Platform:** Ei Mindspark")
+                st.markdown("### 1. Executive Summary: Literacy Development through Targeted Practice")
+                st.write("The data for Poshya Hariharan Degapudi reflects an active engagement with English literacy modules, totaling **15 hours and 29 minutes of usage** since June 2025. With **1,017 questions solved** and an overall **accuracy of 57%**, the student is working through the four essential pillars of language acquisition: Grammar, Vocabulary, Reading, and Listening.")
+                
+                st.markdown("### 2. High-Impact Learning & Knowledge Gap Identification")
+                st.write("Poshya’s profile shows a clear distinction between technical language construction and receptive processing skills.")
+                st.write("- **Grammatical Proficiency:** Poshya shows the strongest performance in **Grammar**, achieving an accuracy of **65%** over 310 questions.")
+                st.write("- **Lexical Growth:** The student maintains a steady **61% accuracy** in **Vocabulary**, having solved the highest volume of questions (447) in this category.")
+                st.write("- **Receptive Challenges:** The data identifies significant 'Knowledge Gaps' in **Listening (44% accuracy)** and **Reading (41% accuracy)**. These areas represent the most critical opportunities for focused intervention to improve comprehension and information processing.")
+                
+                st.markdown("### 3. Quantitative Proficiency: Topic Performance")
+                st.write("Poshya has distributed effort across all activated literacy topics, with a heavy emphasis on building a strong vocabulary base.")
+                growth_data_6e = pd.DataFrame({
+                    'Topic': ['Grammar', 'Vocabulary', 'Reading', 'Listening'],
+                    'Questions Solved': [310, 447, 155, 105],
+                    'Accuracy (%)': [65, 61, 41, 44],
+                    'Time Spent': ['2h 1m', '3h 12m', '56m', '34m']
+                })
+                col_table6, col_chart6 = st.columns([1, 1])
+                with col_table6:
+                    st.dataframe(growth_data_6e, use_container_width=True)
+                with col_chart6:
+                    fig_growth_6e = px.bar(growth_data_6e, x='Topic', y='Accuracy (%)', title="Topic Accuracy", color_discrete_sequence=[COLOR_PRIMARY])
+                    fig_growth_6e.update_layout(xaxis_tickangle=-45, height=300)
+                    st.plotly_chart(fig_growth_6e, use_container_width=True)
+                
+                st.markdown("### 4. Learning Efficiency & Persistence")
+                st.write("Poshya’s learning style is characterized by a high-volume approach to structural language elements.")
+                st.write("- **Building Blocks:** Poshya has spent over **5 hours combined** on **Grammar** and **Vocabulary**, indicating a systematic attempt to master the technical rules and word bank of the English language.")
+                st.write("- **Receptive Engagement:** While accuracy in **Reading** and **Listening** is currently lower, Poshya has still engaged with **260 questions** across these topics, showing a persistent effort to improve comprehension.")
+                st.write("- **Active Pace:** Solving over **1,000 questions** in roughly 15.5 hours suggests a very brisk pace of interaction with the platform's adaptive content.")
+                
+                st.markdown("### 5. Conclusion")
+                st.write("Poshya Hariharan Degapudi’s case study illustrates a 'Structural Learner' profile. By achieving over **60% accuracy** in Grammar and Vocabulary, the student is successfully filling gaps in the mechanics of the English language. The identified gaps in **Reading and Listening** suggest that the platform's adaptive logic is correctly highlighting where processing speed and comprehension need further support. Moving forward, the objective will be to translate Poshya's solid grammatical and lexical foundation into higher accuracy during receptive tasks.")
+
+            # Grade 7 - Jayant Srisai Vedulla (Math)
+            elif case_study_key == "grade7_math":
+                st.markdown("## Data-Driven Remediation & Gap Closure")
+                st.markdown("**Student Profile:** Jayant Srisai Vedulla, Class 7-Section Mt Annapurna | **Platform:** Ei Mindspark")
+                st.markdown("### 1. Executive Summary: Strategic Engagement in Core Numeracy")
+                st.write("The data for Jayant Srisai Vedulla reflects a student with high mathematical accuracy and efficient learning habits. Since June 01, 2025, Jayant has utilized the platform for **41 hours and 48 minutes**, solving a total of **1,424 questions**. With an overall **accuracy of 76%** and **1,635 'Sparkies'** earned, he demonstrates strong performance across 15 activated topics, particularly in foundational Grade 7 concepts like Decimals, Fractions, and Exponents.")
+                
+                st.markdown("### 2. High-Impact Remediation & Knowledge Gap Closure")
+                st.write("A defining characteristic of Jayant’s learning profile is his ability to maintain high performance without requiring specialized intervention.")
+                st.write("- **Independent Learning Excellence:** Despite solving over 1,400 questions, the system triggered **no remediation data** for Jayant.")
+                st.write("- **Avoidance of Struggle Thresholds:** The **absence of remediation summary** indicates that Jayant consistently stays above the thresholds that necessitate corrective loops, bridging potential knowledge gaps through the platform's standard adaptive feedback.")
+                st.write("- **Conceptual Stability:** His high accuracy levels across diverse topics suggest a solid existing foundation that requires validation and extension rather than fundamental correction.")
+                
+                st.markdown("### 3. Quantitative Growth: Baseline vs. Endline")
+                st.write("Jayant’s topic summary provides concrete evidence of 'filling the gap,' moving from varied initial baselines to high proficiency in advanced modules.")
+                growth_data_7m = pd.DataFrame({
+                    'Topic': ['Exponents and roots - 1', 'Decimals - Operations', 'Operations on fractions', 'Decimals - Fundamentals', 'Fractions - Equivalence & Comparison - 1'],
+                    'Baseline (%)': [100, 100, 55, 25, 59],
+                    'Endline (%)': [100, 80, 80, 50, 59],
+                    'Accuracy (%)': [82, 85, 82, 80, 68]
+                })
+                col_table7, col_chart7 = st.columns([1, 1])
+                with col_table7:
+                    st.dataframe(growth_data_7m, use_container_width=True)
+                with col_chart7:
+                    fig_growth_7m = px.bar(growth_data_7m, x='Topic', y=['Baseline (%)', 'Endline (%)'], barmode='group', title="Growth Trajectory", color_discrete_map={'Baseline (%)': COLOR_SECONDARY, 'Endline (%)': COLOR_PRIMARY})
+                    fig_growth_7m.update_layout(xaxis_tickangle=-45, height=300)
+                    st.plotly_chart(fig_growth_7m, use_container_width=True)
+                
+                st.markdown("### 4. Learning Efficiency & Focused Practice")
+                st.write("Jayant's learning style is defined by significant investment in time-intensive procedural topics and high speed in conceptual ones.")
+                st.write("- **Numerical Fluency:** He spent over **4 hours each** on **Integers** (318 questions) and **Decimals - Operations** (261 questions), demonstrating a deep dive into core arithmetic.")
+                st.write("- **Fractional Mastery:** Jayant dedicated a combined **5 hours and 23 minutes** to Fractions, solving **420 questions** across concepts like equivalence and operations.")
+                st.write("- **Strategic Accuracy:** He achieved remarkable accuracy in **Area of plane figures (100%)**, **Profit and Loss (75%)**, and **Pre-algebra reasoning (78%)** with minimal time spent.")
+                st.write("- **Efficiency in Exponents:** He reached **100% Endline** scores in **Exponents and roots - 1**, maintaining an **82% accuracy** over 156 solved questions.")
+                
+                st.markdown("### 5. Conclusion")
+                st.write("Jayant Srisai Vedulla’s case study illustrates a 'High-Proficiency, Low-Intervention' profile. By turning a **55% baseline** in 'Operations on fractions' into an **80% endline** and a **25% baseline** in 'Decimals - Fundamentals' into **50%**, he proves that the platform's adaptive logic effectively consolidates his learning. The fact that he solved over **1,400 questions** with **zero remediation time** serves as the strongest evidence of his high learning efficiency, confirming that he is successfully using Mindspark to reinforce and validate his mathematical excellence in Class 7.")
+
+            # Grade 7 - Jayant Srisai Vedulla (Science)
+            elif case_study_key == "grade7_sci":
                 st.markdown("## Data-Driven Remediation & Gap Closure")
                 st.markdown("**Student Profile:** Jayant Srisai Vedulla, Class 7-Section Mt Annapurna | **Platform:** Ei Mindspark")
                 st.markdown("### 1. Executive Summary: Establishing Foundations in Science")
@@ -1100,6 +1440,44 @@ if "Case Study" in tab_map:
                 
                 st.markdown("### 5. Conclusion")
                 st.write("Jayant’s case study illustrates a 'Steady Builder' profile. By starting with a **0% baseline** and reaching a consistent **59% overall accuracy** across diverse science topics, he demonstrates that the platform is effectively helping him bridge foundational knowledge gaps. The fact that he reached **100% completion** in every topic attempted, without triggering a single remediation instance, confirms that he is successfully maintaining the necessary pace and understanding required for Grade 7 science.")
+
+            # Grade 7 - Kashvita Sai Gulipalli (English)
+            elif case_study_key == "grade7_eng":
+                st.markdown("## Case Study: English Literacy Foundations & Engagement")
+                st.markdown("**Student Profile:** Kashvita Sai Gulipalli, Class 7-Section Mt Everest | **Platform:** Ei Mindspark")
+                st.markdown("### 1. Executive Summary: High-Efficiency Literacy Progress")
+                st.write("The data for Kashvita Sai Gulipalli reflects a highly efficient and successful engagement with English literacy modules. Since June 2025, the student has utilized the platform for **10 hours and 13 minutes**, solving **491 questions**. With a strong overall **accuracy of 74%**, Kashvita demonstrates a solid grasp of the four primary pillars of language acquisition: Grammar, Vocabulary, Reading, and Listening.")
+                
+                st.markdown("### 2. High-Impact Learning & Knowledge Gap Identification")
+                st.write("Kashvita’s profile shows a consistently high performance across both structural and receptive language skills.")
+                st.write("- **Grammatical Proficiency:** Kashvita shows her strongest performance in **Grammar**, achieving an accuracy of **78%** over 144 questions.")
+                st.write("- **Lexical Growth:** The student maintains a high **76% accuracy** in **Vocabulary**, which was the most practiced topic with 212 questions solved.")
+                st.write("- **Receptive Mastery:** While slightly lower than the structural topics, Kashvita maintains healthy accuracy in **Listening (69%)** and **Reading (65%)**. These areas represent minor 'Knowledge Gaps' where continued practice can further bridge the distance to complete mastery.")
+                
+                st.markdown("### 3. Quantitative Proficiency: Topic Performance")
+                st.write("Kashvita has distributed her efforts across all activated literacy topics, achieving high accuracy in each domain.")
+                growth_data_7e = pd.DataFrame({
+                    'Topic': ['Grammar', 'Vocabulary', 'Listening', 'Reading'],
+                    'Questions Solved': [144, 212, 55, 80],
+                    'Accuracy (%)': [78, 76, 69, 65],
+                    'Time Spent': ['1h 18m', '1h 47m', '54m', '1h 9m']
+                })
+                col_table7, col_chart7 = st.columns([1, 1])
+                with col_table7:
+                    st.dataframe(growth_data_7e, use_container_width=True)
+                with col_chart7:
+                    fig_growth_7e = px.bar(growth_data_7e, x='Topic', y='Accuracy (%)', title="Topic Accuracy", color_discrete_sequence=[COLOR_PRIMARY])
+                    fig_growth_7e.update_layout(xaxis_tickangle=-45, height=300)
+                    st.plotly_chart(fig_growth_7e, use_container_width=True)
+                
+                st.markdown("### 4. Learning Efficiency & Persistence")
+                st.write("Kashvita’s learning style is characterized by high speed and consistent accuracy across different language elements.")
+                st.write("- **Balanced Focus:** Kashvita spent over **3 hours combined** on **Grammar** and **Vocabulary**, indicating a strong focus on the building blocks of the English language.")
+                st.write("- **Effective Comprehension:** She dedicated approximately **2 hours** to **Reading and Listening**, achieving scores that suggest she is successfully translating her technical knowledge into comprehension.")
+                st.write("- **High Solving Rate:** Solving nearly **500 questions** in just **10 hours** reflects a focused and brisk pace of interaction with the platform's adaptive content.")
+                
+                st.markdown("### 5. Conclusion")
+                st.write("Kashvita Sai Gulipalli’s case study illustrates a 'High-Efficiency Learner' profile. By achieving **75%+ accuracy** in Grammar and Vocabulary, the student is successfully filling gaps in the structural mechanics of the language. Her performance in **Reading and Listening** confirms that she is effectively applying these skills to receptive tasks. The objective for future sessions should be to leverage this strong foundation to push for even higher accuracy in complex reading and listening scenarios.")
 
         else:
             st.info("Detailed case studies are available for selected schools. Please select a supported school to view student success stories.")
@@ -1184,7 +1562,7 @@ if "Summary" in tab_map:
     with selected_tabs[tab_map["Summary"]]:
         st.header("Strategic Executive Summary")
         
-        exec_ms_tab, exec_asset_tab = st.tabs(["Mindspark Math", "ASSET"])
+        exec_ms_tab, exec_asset_tab = st.tabs(["Mindspark", "ASSET"])
         
         with exec_asset_tab:
             st.markdown("### ASSET Performance & Impact Summary")
