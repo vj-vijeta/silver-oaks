@@ -367,25 +367,13 @@ with selected_tabs[0]:
                                  labels={'value': 'Performance', 'variable': 'Academic Year'})
             st.plotly_chart(fig_yoy_eng, width="stretch")
             
-        # 3. Science Cohort Progress
-        yoy_sci = get_file("ASSET", "View Data (Same Class YoY) -science")
-        if yoy_sci is not None:
-            yoy_sci_clean = yoy_sci.copy()
-            yoy_sci_clean.columns = ['Cohort'] + list(yoy_sci_clean.columns[1:])
-            yoy_sci_clean = yoy_sci_clean.dropna(subset=['Cohort'])
-            fig_yoy_sci = px.line(yoy_sci_clean, x='Cohort', y=list(yoy_sci_clean.columns[1:]), 
-                                 title="Sustained Cohort Progress (ASSET Science)",
-                                 markers=True, color_discrete_sequence=CHART_COLORS,
-                                 labels={'value': 'Performance', 'variable': 'Academic Year'})
-            st.plotly_chart(fig_yoy_sci, width="stretch")
-            
         st.caption("These charts track the same group of students over time, demonstrating sustained academic excellence across subjects.")
         st.markdown("""
-        **Institutional Resilience:** The steady upward trajectory in Math, English, and Science proves that 
+        **Institutional Resilience:** The steady upward trajectory in both Math and English proves that 
         Silver Oaks is successfully building long-term academic foundations.
         """)
         
-    with col_radar:
+        st.write("---")
         st.subheader("Institutional Engagement Trends")
         # Global Usage ROI (from 'View Underlying Data')
         usage_dfs = []
@@ -401,11 +389,24 @@ with selected_tabs[0]:
                 monthly_usage = all_usage.groupby('Month')['Per Student Monthly Usage (Mins)'].mean().reset_index()
                 # Sort by month (simple heuristic for fiscal year)
                 fig_usage = px.line(monthly_usage, x='Month', y='Per Student Monthly Usage (Mins)', 
-                                   title="Operational Impact: Monthly Utility",
+                                   title="Operational Impact: Monthly Utility (Student Engagement)",
                                    markers=True, color_discrete_sequence=[COLOR_PRIMARY])
                 st.plotly_chart(fig_usage, width="stretch")
                 st.caption("Data aggregated across all active Mindspark product lines.")
             except: pass
+    
+    with col_radar:
+        st.subheader("Science Growth")
+        yoy_sci = get_file("ASSET", "View Data (Same Class YoY) -science")
+        if yoy_sci is not None:
+            yoy_sci_clean = yoy_sci.copy()
+            yoy_sci_clean.columns = ['Cohort'] + list(yoy_sci_clean.columns[1:])
+            yoy_sci_clean = yoy_sci_clean.dropna(subset=['Cohort'])
+            fig_yoy_sci = px.line(yoy_sci_clean, x='Cohort', y=list(yoy_sci_clean.columns[1:]), 
+                                 title="Sustained Cohort Progress (ASSET Science)",
+                                 markers=True, color_discrete_sequence=CHART_COLORS,
+                                 labels={'value': 'Performance', 'variable': 'Academic Year'})
+            st.plotly_chart(fig_yoy_sci, width="stretch")
 
     st.write("---")
     
@@ -925,16 +926,11 @@ if "Case Study" in tab_map:
             rel_dirs = []
             if target_prod:
                 rel_dirs.append(os.path.join("report pdf", target_prod))
-                rel_dirs.append(os.path.join("reports pdf", target_prod))
             rel_dirs.extend([
                 os.path.join("report pdf", "mindspark math"),
                 os.path.join("report pdf", "mindspark english"),
                 os.path.join("report pdf", "mindspark science"),
-                "report pdf",
-                os.path.join("reports pdf", "mindspark math"),
-                os.path.join("reports pdf", "mindspark english"),
-                os.path.join("reports pdf", "mindspark science"),
-                "reports pdf"
+                "report pdf"
             ])
             
             for base in possible_base_paths:
